@@ -1,26 +1,557 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   BA3HACASH — GLOBAL DESIGN SYSTEM
+   Brand: Smart Blue / Premium Automotive
+   Stack: Next.js + Tailwind CSS v4
+   ========================================================================== */
+
 :root {
+  /* ============================================================
+     BRAND COLORS
+     ============================================================ */
+
+  --brand: #0466c8;
+  --brand-dark: #0353a4;
+  --brand-deep: #023e7d;
+
+  --brand-hover: #0f85fa;
+  --brand-light: #4ba3fb;
+  --brand-soft: #87c2fd;
+  /* --brand-pale: #c3e0fe; */
+  --brand-pale: black;
+
+  /* ============================================================
+     SECONDARY BLUE
+     ============================================================ */
+
+  --sapphire: #0353a4;
+  --sapphire-dark: #012242;
+  --sapphire-light: #3698fb;
+
+  /* ============================================================
+     NAVY SYSTEM
+     ============================================================ */
+
+  --navy: #001233;
+  --navy-dark: #000714;
+  --navy-deep: #00040a;
+
+  --navy-medium: #001845;
+  --navy-blue: #002855;
+
+  /* ============================================================
+     SLATE SYSTEM
+     ============================================================ */
+
+  --slate-900: #131519;
+  --slate-800: #252a32;
+  --slate-700: #383f4c;
+  --slate-600: #4b5365;
+  --slate-500: #5c677d;
+  --slate-400: #79859c;
+  --slate-300: #9ba3b5;
+  --slate-200: #bcc2ce;
+  --slate-100: #dee0e6;
+
+  /* ============================================================
+     GREY SYSTEM
+     ============================================================ */
+
+  --grey-900: #191a1f;
+  --grey-800: #31353d;
+  --grey-700: #4a4f5c;
+  --grey-600: #62697a;
+  --grey-500: #7d8597;
+  --grey-400: #979dab;
+  --grey-300: #b1b6c0;
+  --grey-200: #cbced5;
+  --grey-100: #e5e7ea;
+
+  /* ============================================================
+     LAVENDER GREY
+     ============================================================ */
+
+  --lavender-900: #1d1f24;
+  --lavender-800: #393d47;
+  --lavender-700: #565c6b;
+  --lavender-600: #737a8e;
+  --lavender-500: #979dac;
+  --lavender-400: #abb0bc;
+  --lavender-300: #c0c4cd;
+  --lavender-200: #d5d7dd;
+  --lavender-100: #eaebee;
+
+  /* ============================================================
+     LIGHT / SURFACE SYSTEM
+     ============================================================ */
+
   --background: #ffffff;
-  --foreground: #171717;
+  --background-soft: #f8fafc;
+
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+
+  /* ============================================================
+     TEXT SYSTEM
+     ============================================================ */
+
+  --foreground: #001233;
+  --foreground-secondary: #33415c;
+  --foreground-muted: #7d8597;
+
+  /* ============================================================
+     BORDER SYSTEM
+     ============================================================ */
+
+  --border: #dee0e6;
+  --border-light: #eaebee;
+  --border-dark: #bcc2ce;
+
+  /* ============================================================
+     CTA SYSTEM
+     ============================================================ */
+
+  --cta: #0466c8;
+  --cta-hover: #0353a4;
+  --cta-active: #023e7d;
+  --cta-text: #ffffff;
+
+  /* ============================================================
+     STATUS COLORS
+     ============================================================ */
+
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+
+  --warning: #f59e0b;
+  --warning-soft: #fef3c7;
+
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+
+  --info: #0466c8;
+  --info-soft: #e0f2fe;
+
+  /* ============================================================
+     SHADOWS
+     ============================================================ */
+
+  --shadow-sm:
+    0 1px 2px rgba(0, 18, 51, 0.05);
+
+  --shadow-md:
+    0 4px 12px rgba(0, 18, 51, 0.08);
+
+  --shadow-lg:
+    0 10px 30px rgba(0, 18, 51, 0.10);
+
+  --shadow-xl:
+    0 20px 50px rgba(0, 18, 51, 0.14);
+
+  --shadow-brand:
+    0 10px 30px rgba(4, 102, 200, 0.20);
+
+  /* ============================================================
+     RADIUS
+     ============================================================ */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  /* ============================================================
+     TRANSITIONS
+     ============================================================ */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
+
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    "Inter",
+    "Noto Sans Arabic",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* ==========================================================================
+   SELECTION
+   ========================================================================== */
+
+::selection {
+  background: var(--brand-pale);
+  color: var(--navy);
+}
+
+
+/* ==========================================================================
+   LINKS
+   ========================================================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ==========================================================================
+   BUTTON RESET
+   ========================================================================== */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* ==========================================================================
+   FOCUS
+   ========================================================================== */
+
+:focus-visible {
+  outline: 2px solid var(--brand-light);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================================
+   SCROLLBAR
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--slate-200);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--slate-300);
+}
+
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  color: var(--foreground);
+
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+
+  color: var(--foreground-secondary);
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+.text-brand {
+  color: var(--brand);
+}
+
+.text-navy {
+  color: var(--navy);
+}
+
+.text-muted {
+  color: var(--foreground-muted);
+}
+
+.bg-brand {
+  background: var(--brand);
+}
+
+.bg-navy {
+  background: var(--navy);
+}
+
+.bg-soft {
+  background: var(--background-soft);
+}
+
+.bg-surface {
+  background: var(--surface);
+}
+
+.border-default {
+  border-color: var(--border);
+}
+
+
+/* ==========================================================================
+   PREMIUM CARD
+   ========================================================================== */
+
+.card {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--brand-pale);
+
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* ==========================================================================
+   PRIMARY BUTTON
+   ========================================================================== */
+
+.btn-primary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 48px;
+  padding: 0 20px;
+
+  background: var(--cta);
+  color: var(--cta-text);
+
+  border: 1px solid var(--cta);
+  /* border-radius: var(--radius-lg); */
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background: var(--cta-hover);
+
+  box-shadow: var(--shadow-brand);
+
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  background: var(--cta-active);
+
+  transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   SECONDARY BUTTON
+   ========================================================================== */
+
+.btn-secondary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 48px;
+  padding: 0 20px;
+
+  background: var(--surface);
+  color: var(--foreground);
+
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background: var(--background-soft);
+
+  border-color: var(--brand);
+
+  color: var(--brand);
+}
+
+
+/* ==========================================================================
+   INPUTS
+   ========================================================================== */
+
+.input {
+  width: 100%;
+  min-height: 48px;
+
+  padding: 0 14px;
+
+  background: var(--surface);
+  color: var(--foreground);
+
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.input::placeholder {
+  color: var(--foreground-muted);
+}
+
+.input:focus {
+  outline: none;
+
+  border-color: var(--brand);
+
+  box-shadow:
+    0 0 0 3px rgba(4, 102, 200, 0.12);
+}
+
+
+/* ==========================================================================
+   CONTAINER
+   ========================================================================== */
+
+.container-custom {
+  width: min(100% - 32px, 1280px);
+  margin-inline: auto;
+}
+
+
+/* ==========================================================================
+   GRADIENTS
+   ========================================================================== */
+
+.gradient-brand {
+  background:
+    linear-gradient(
+      135deg,
+      var(--navy) 0%,
+      var(--brand-deep) 50%,
+      var(--brand) 100%
+    );
+}
+
+.gradient-soft {
+  background:
+    linear-gradient(
+      135deg,
+      var(--background) 0%,
+      var(--background-soft) 100%
+    );
+}
+
+
+/* ==========================================================================
+   BRAND GLOW
+   ========================================================================== */
+
+.brand-glow {
+  box-shadow:
+    0 0 0 1px rgba(4, 102, 200, 0.08),
+    0 20px 60px rgba(4, 102, 200, 0.12);
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .container-custom {
+    width: min(100% - 24px, 1280px);
+  }
+}
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
