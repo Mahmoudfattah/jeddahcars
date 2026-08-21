@@ -31,7 +31,7 @@ export default function HeroSection() {
               href="https://wa.me/9665XXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 w-fit flex items-center gap-4 rounded-full bg-white text-black! font-semibold py-1.5 pl-1.5 pr-6 hover:bg-gray-200 transition duration-300"
+              className="mt-4 w-fit flex items-center gap-4 rounded-full bg-white text-black! font-semibold py-1.5 pl-1.5 pr-6 hover:-translate-y-1 hover:bg-gray-200 transition duration-300"
             >
               <span className="text-sm text-blue-950">
                 راسلنا على واتساب الآن
@@ -44,7 +44,7 @@ export default function HeroSection() {
               href="https://wa.me/9665XXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4  flex items-center gap-4 rounded-full bg-[#1d7aa5]  text-black! font-semiboldpr-6 hover:bg-gray-200  justify-center shrink-0 w-13 h-13 transition duration-300"
+              className="mt-4  flex items-center gap-4 rounded-full bg-[#1d7aa5]  text-black! font-semiboldpr-6 hover:bg-[#134f6b] hover:-translate-y-1   justify-center shrink-0 w-13 h-13 transition duration-300"
             >
              
          

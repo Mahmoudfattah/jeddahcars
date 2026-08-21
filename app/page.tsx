@@ -6,7 +6,9 @@
 // import CitiesWeServe from "./components/sections/CitiesWeServe";
 // import Contact from "./components/sections/Contact";
 
+import AboutSection from "./components/sections/AboutSection";
 import HeroSection from "./components/sections/Hero";
+import TrustIntroAndVideoSection from "./components/sections/TrustIntroAndVideoSection";
 
 
 
@@ -18,9 +20,9 @@ export default function Home() {
   return (
     <>
     <HeroSection/>
-    <div className="h-dvh">
-
-    </div>
+    <AboutSection/>
+    <TrustIntroAndVideoSection/>
+    
       {/* <Hero />
       <Brands />
       <About />
