@@ -4,7 +4,7 @@ import { Truck, ShieldCheck, Clock3, ArrowLeft, Phone } from "lucide-react";
 export default function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden bg-background text-foreground py-20 sm:py-20"
+      className="relative overflow-hidden bg-background text-foreground py-18 sm:py-20"
       dir="rtl"
     >
       <div className="container-custom relative z-10 px-4 sm:px-6">

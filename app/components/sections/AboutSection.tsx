@@ -45,7 +45,7 @@ export default function AboutSection() {
           pointer-events-none
           absolute
           -left-40
-          bottom-0
+          bottom-20
           h-80
           w-80
           rounded-full

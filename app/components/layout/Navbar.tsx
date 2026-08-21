@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 const NAV_LINKS = [
   { label: "من نحن", href: "#about" },
   { label: "كيف تعمل الخدمة", href: "#how-it-works" },
-  { label: "المدن التي نخدمها", href: "#cities" },
+  { label: "سيارات مصدومة", href: "#cars" },
 ];
 
 const NAV_OFFSET = 90;
@@ -22,15 +22,12 @@ export default function Navbar() {
   ========================================================= */
   const scrollToSection = (hash: string) => {
     const id = hash.replace("#", "");
-
     if (!id) return;
 
     const section = document.getElementById(id);
-
     if (!section) return;
 
-    const top =
-      section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+    const top = section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
 
     window.scrollTo({
       top,
@@ -38,7 +35,6 @@ export default function Navbar() {
     });
 
     setActiveHash(hash);
-
     window.history.replaceState(null, "", hash);
   };
 
@@ -48,7 +44,6 @@ export default function Navbar() {
   useEffect(() => {
     const sections = NAV_LINKS.map((link) => {
       if (!link.href.startsWith("#")) return null;
-
       return document.getElementById(link.href.slice(1));
     }).filter(Boolean) as HTMLElement[];
 
@@ -62,9 +57,7 @@ export default function Navbar() {
 
         if (visibleEntries.length > 0) {
           const activeSection = visibleEntries[0].target as HTMLElement;
-
           const nextHash = `#${activeSection.id}`;
-
           setActiveHash(nextHash);
 
           if (window.location.hash !== nextHash) {
@@ -72,11 +65,8 @@ export default function Navbar() {
           }
         } else if (window.scrollY < 120) {
           setActiveHash("");
-
           if (window.location.hash) {
-            const cleanUrl =
-              `${window.location.pathname}` + `${window.location.search}`;
-
+            const cleanUrl = `${window.location.pathname}` + `${window.location.search}`;
             window.history.replaceState(null, "", cleanUrl);
           }
         }
@@ -102,18 +92,14 @@ export default function Navbar() {
     const handleTopOfPage = () => {
       if (window.scrollY < 120) {
         setActiveHash("");
-
         if (window.location.hash) {
-          const cleanUrl =
-            `${window.location.pathname}` + `${window.location.search}`;
-
+          const cleanUrl = `${window.location.pathname}` + `${window.location.search}`;
           window.history.replaceState(null, "", cleanUrl);
         }
       }
     };
 
     handleTopOfPage();
-
     window.addEventListener("scroll", handleTopOfPage, { passive: true });
 
     return () => {
@@ -143,24 +129,34 @@ export default function Navbar() {
     };
 
     window.addEventListener("keydown", handleEscape);
-
     return () => {
       window.removeEventListener("keydown", handleEscape);
     };
   }, []);
 
   /* =========================================================
-     LOCK BODY SCROLL
+     LOCK BODY SCROLL (Prevent Layout Shift/Jump)
   ========================================================= */
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
+    if (!isOpen) {
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+      return;
     }
 
+    // 1. Calculate the exact width of the scrollbar
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    // 2. Lock the scroll
+    document.body.style.overflow = "hidden";
+
+    // 3. Add right padding to compensate for the missing scrollbar
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+    // Cleanup function when the menu closes
     return () => {
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
     };
   }, [isOpen]);
 
@@ -169,16 +165,13 @@ export default function Navbar() {
   ========================================================= */
   const goHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
 
     setActiveHash("");
-
     window.history.replaceState(null, "", "/");
-
     closeMenu();
   };
 
@@ -187,21 +180,16 @@ export default function Navbar() {
   ========================================================= */
   const goContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-
     const section = document.getElementById("contact");
-
     if (!section) return;
 
-    const top =
-      section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
-
+    const top = section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
     window.scrollTo({
       top,
       behavior: "smooth",
     });
 
     window.history.replaceState(null, "", "#contact");
-
     closeMenu();
   };
 
@@ -307,18 +295,13 @@ export default function Navbar() {
                 shrink-0
                 items-center
                 gap-1
-
                 rounded-full
                 border
                 border-white/70
-
                 bg-white/25
-
                 p-1.5
-
                 backdrop-blur-2xl
                 backdrop-saturate-150
-
                 shadow-[0_8px_30px_rgba(15,23,42,0.08)]
               "
             >
@@ -350,18 +333,13 @@ export default function Navbar() {
                     className={`
                       relative
                       z-10
-
                       rounded-full
-
                       px-5
                       py-2.5
-
                       text-[15px]
                       font-medium
-
                       transition-all
                       duration-300
-
                       ${
                         isActive
                           ? `
@@ -408,136 +386,103 @@ export default function Navbar() {
           </div>
 
           {/* =================================================
-              MOBILE NAVBAR
+              MOBILE NAVBAR (Fully Rounded Pill)
           ================================================= */}
           <div
             className="
               relative
               z-50
-
               flex
               md:hidden
-
-              h-[52px]
+              h-[56px]
               w-full
-
               items-center
-              justify-between
-
               rounded-full
-
               border
-              border-white/70
-
-              bg-white/30
-
-              px-1.5
-
-              backdrop-blur-2xl
+              border-white/80
+              bg-white/85
+              px-2
+              shadow-[0_8px_28px_rgba(15,23,42,0.12)]
+              backdrop-blur-xl
               backdrop-saturate-150
-
-              shadow-[0_6px_25px_rgba(15,23,42,0.10)]
             "
           >
-            {/* subtle glass highlight */}
+            {/* subtle glass highlight adapted for full radius */}
             <span
               className="
                 pointer-events-none
                 absolute
-                inset-0
-                rounded-full
+                inset-x-0
+                top-0
+                h-1/2
+                rounded-t-full
                 bg-gradient-to-b
-                from-white/45
-                via-white/10
+                from-white/80
                 to-transparent
               "
             />
 
-            {/* =================================================
-                LEFT — CTA
-            ================================================= */}
-            <div
-              className="
-                relative
-                z-10
-                flex
-                w-1/3
-                justify-start
-              "
-            >
-              <Link
-                href="#contact"
-                onClick={goContact}
-                className="
-                  btn-primary
-
+            {/* LEFT — MENU */}
+            <div className="relative z-10 flex w-1/3 items-center justify-start">
+              <button
+                type="button"
+                onClick={toggleMenu}
+                aria-label={isOpen ? "إغلاق القائمة" : "فتح القائمة"}
+                aria-expanded={isOpen}
+                className={`
                   flex
                   h-[40px]
+                  w-[40px]
                   items-center
                   justify-center
-
                   rounded-full
-
-                  px-4
-                   
-
-                  text-[12px]
-                  font-bold
-
-                  shadow-[0_3px_12px_rgba(30,131,174,0.18)]
-                   -mr-1
-                  transition-transform
-                  duration-200
-
-                  active:scale-95
-                "
+                  border
+                  -mr-1
+                  transition-all
+                  duration-300
+                  ease-in-out
+                  active:scale-90
+                  ${
+                    isOpen
+                      ? "border-[#1e83ae] bg-[#1e83ae] text-white shadow-[0_4px_14px_rgba(30,131,174,0.25)]"
+                      : "border-slate-200 bg-white text-[#1e83ae] shadow-sm"
+                  }
+                `}
               >
-                تواصل
-              </Link>
+                {isOpen ? (
+                  <X size={19} strokeWidth={2.5} />
+                ) : (
+                  <Menu size={19} strokeWidth={2.5} />
+                )}
+              </button>
             </div>
 
-            {/* =================================================
-                CENTER — LOGO
-            ================================================= */}
-            <div
-              className="
-                relative
-                z-10
-                flex
-                w-1/3
-                justify-center
-              "
-            >
+            {/* CENTER — LOGO */}
+            <div className="relative z-10 flex w-1/3 items-center justify-center">
               <Link
                 href="/"
                 onClick={goHome}
+                aria-label="الرئيسية"
                 className="
                   flex
-                  h-[38px]
-                  w-[38px]
+                  h-[42px]
+                  w-[42px]
                   items-center
                   justify-center
-
                   rounded-full
-
                   border
-                  border-white/70
-
-                  bg-white/55
-
-                  backdrop-blur-xl
-
-                  shadow-sm
-
+                  border-slate-200
+                  bg-white
+                  shadow-[0_3px_12px_rgba(15,23,42,0.08)]
                   transition-transform
-                  duration-200
-
+                  duration-300
+                  ease-in-out
                   active:scale-90
                 "
               >
                 <Image
                   src="/logocut.webp"
-                  alt="الشعار"
+                  alt="شراء السيارات المصدومة"
                   width={31}
                   height={31}
                   priority
@@ -546,249 +491,217 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* =================================================
-                RIGHT — MENU
-            ================================================= */}
-            <div
-              className="
-                relative
-                z-10
-                flex
-                
-                w-1/3
-                justify-end
-              "
-            >
-              <button
-                type="button"
-                onClick={toggleMenu}
-                aria-label="تبديل القائمة"
-                aria-expanded={isOpen}
+            {/* RIGHT — CONTACT */}
+            <div className="relative z-10 flex w-1/3 items-center justify-end">
+              <Link
+                href="#contact"
+                onClick={goContact}
                 className="
+                  btn-primary
                   flex
                   h-[40px]
-                  w-[40px]
+                  min-w-[72px]
                   items-center
                   justify-center
-
                   rounded-full
-  -ml-1
-                  border
-                  border-white/70
-
-                  bg-white/65
-
-                  backdrop-blur-xl
-
-                  shadow-sm
-
+                  px-4
+                  -ml-1
+                  text-[12px]
+                  font-bold
+                  whitespace-nowrap
+                  shadow-[0_4px_14px_rgba(30,131,174,0.18)]
                   transition-all
-                  duration-200
-
-                  active:scale-90
+                  duration-300
+                  ease-in-out
+                  active:scale-95
                 "
               >
-                {isOpen ? (
-                  <X size={18} strokeWidth={2.3} color="#1e83ae" />
-                ) : (
-                  <Menu size={18} strokeWidth={2.3} color="#1e83ae" />
-                )}
-              </button>
+                تواصل
+              </Link>
             </div>
           </div>
         </div>
       </header>
 
       {/* =======================================================
-          MOBILE BACKDROP
+          MOBILE MENU (Smooth Animated Dropdown)
       ======================================================= */}
-      {isOpen && (
-        <>
+      <div
+        className={`
+          fixed
+          inset-0
+          z-[40]
+          md:hidden
+          transition-all
+          duration-300
+          ease-in-out
+          ${
+            isOpen
+              ? "pointer-events-auto opacity-100"
+              : "pointer-events-none opacity-0"
+          }
+        `}
+      >
+        {/* Backdrop */}
+        <button
+          type="button"
+          aria-label="إغلاق القائمة"
+          onClick={closeMenu}
+          className={`
+            absolute
+            inset-0
+            h-full
+            w-full
+            cursor-default
+            bg-slate-950/30
+            backdrop-blur-[2px]
+            transition-opacity
+            duration-300
+            ease-in-out
+            ${isOpen ? "opacity-100" : "opacity-0"}
+          `}
+        />
+
+        {/* Compact Mobile Menu */}
+        <div
+          className={`
+            absolute
+            left-4
+            right-4
+            top-[76px]
+            overflow-hidden
+            rounded-[24px]
+            border
+            border-slate-200/90
+            bg-white
+            shadow-[0_20px_55px_rgba(15,23,42,0.22)]
+            origin-top
+            transition-all
+            duration-300
+            ease-in-out
+            ${
+              isOpen
+                ? "translate-y-0 scale-100 opacity-100 visible"
+                : "-translate-y-4 scale-95 opacity-0 invisible"
+            }
+          `}
+          dir="rtl"
+        >
+          {/* Menu header */}
           <div
             className="
-              fixed
-              inset-0
-              z-[35]
-              md:hidden
-
-              bg-slate-950/20
-              backdrop-blur-[4px]
-            "
-            onClick={closeMenu}
-          />
-
-          {/* ===================================================
-              COMPACT MOBILE GLASS MENU
-          =================================================== */}
-          <div
-            className="
-              fixed
-
-              top-[70px]
-              left-6
-              right-6
-
-              z-[40]
-
-              md:hidden
-
-              overflow-hidden
-
-              rounded-[24px]
-
-              border
-              border-white/70
-
-              bg-white/70
-
-              p-2
-
-              backdrop-blur-2xl
-              backdrop-saturate-150
-
-              shadow-[0_18px_50px_rgba(15,23,42,0.16)]
+              flex
+              items-center
+              justify-between
+              border-b
+              border-slate-100
+              px-5
+              py-3.5
             "
           >
-            {/* Glass reflection */}
-            <div
+            <span className="text-[13px] font-bold text-slate-500">
+              القائمة الرئيسية
+            </span>
+
+            <span
               className="
-                pointer-events-none
-                absolute
-                inset-0
-                bg-gradient-to-b
-                from-white/45
-                via-white/15
-                to-transparent
+                h-1.5
+                w-1.5
+                rounded-full
+                bg-[#1e83ae]
               "
             />
+          </div>
 
-            {/* =================================================
-                LINKS
-            ================================================= */}
-            <nav
-              className="
-                relative
+          {/* NAV LINKS */}
+          <nav className="p-3">
+            {NAV_LINKS.map((link) => {
+              const isActive = activeHash === link.href;
 
-                z-10
-                flex
-                flex-col
-                gap-1
-              "
-            >
-              {NAV_LINKS.map((link) => {
-                const isActive = activeHash === link.href;
-
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-
-                      scrollToSection(link.href);
-
-                      closeMenu();
-                    }}
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                    closeMenu();
+                  }}
+                  className={`
+                    relative
+                    flex
+                    min-h-[52px]
+                    w-full
+                    items-center
+                    rounded-[16px]
+                    px-4
+                    text-right
+                    text-[15px]
+                    leading-6
+                    transition-all
+                    duration-200
+                    ease-out
+                    mb-1
+                    ${
+                      isActive
+                        ? "bg-[#eaf6fb] !text-[#1e83ae] font-bold"
+                        : "bg-transparent !text-slate-800 font-semibold hover:bg-slate-50 active:bg-slate-100"
+                    }
+                  `}
+                >
+                  <span
                     className={`
-                      relative
-
-                      flex
-                      min-h-[46px]
-                      items-center
-
-                      rounded-[16px]
-
-                      px-4
-
-                      text-[16px]
-                      font-bold
-
-                      transition-all
-                      duration-200
-
+                      absolute
+                      right-3
+                      h-1.5
+                      w-1.5
+                      rounded-full
+                      transition-opacity
+                      duration-300
                       ${
                         isActive
-                          ? `
-                            bg-white/90
-                            text-brand
-                            shadow-sm
-                          `
-                          : `
-                            text-slate-800
-                            hover:bg-white/50
-                          `
+                          ? "bg-[#1e83ae] opacity-100"
+                          : "bg-slate-300 opacity-0"
                       }
                     `}
-                  >
-                    {/* active dot */}
-                    {isActive && (
-                      <span
-                        className="
-                          absolute
-                          right-3
+                  />
 
-                          h-1.5
-                          w-1.5
+                  <span className="w-full pr-4">
+                    {link.label.trim()}
+                  </span>
+                </Link>
+              );
+            })}
+          </nav>
 
-                          rounded-full
-
-                          bg-brand
-                        "
-                      />
-                    )}
-
-                    <span className="w-full text-right">{link.label}</span>
-                  </Link>
-                );
-              })}
-            </nav>
-
-            {/* =================================================
-                MOBILE CTA
-            ================================================= */}
-            <div
+          {/* CONTACT CTA */}
+          <div className="px-3 pb-3">
+            <Link
+              href="#contact"
+              onClick={goContact}
               className="
-                relative
-                z-10
-
-                mt-2
-
-                border-t
-                border-slate-400/20
-
-                pt-2
+                btn-primary
+                flex
+                h-[52px]
+                w-full
+                items-center
+                justify-center
+                rounded-[16px]
+                text-[15px]
+                font-bold
+                shadow-[0_5px_16px_rgba(30,131,174,0.18)]
+                transition-all
+                duration-300
+                ease-in-out
+                active:scale-[0.98]
+                hover:shadow-[0_8px_20px_rgba(30,131,174,0.25)]
               "
             >
-              <Link
-                href="#contact"
-                onClick={goContact}
-                className="
-                  btn-primary
-                  
-
-                  flex
-                  h-[44px]
-                  w-full
-
-                  items-center
-                  justify-center
-
-                  rounded-[16px]
-
-                  text-[14px]
-                  font-bold
-
-                  shadow-[0_4px_16px_rgba(30,131,174,0.16)]
-
-                  active:scale-[0.98]
-                "
-              >
-                تواصل معنا
-              </Link>
-            </div>
+              تواصل معنا
+            </Link>
           </div>
-        </>
-      )}
+        </div>
+      </div>
     </>
   );
 }

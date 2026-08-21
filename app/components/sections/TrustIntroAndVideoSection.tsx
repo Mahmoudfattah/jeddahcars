@@ -85,7 +85,8 @@ export default function TrustIntroAndVideoSection() {
           className="
             pointer-events-none
             absolute
-            -bottom-40
+            -
+            bottom-12
             left-1/4
             h-80
             w-80

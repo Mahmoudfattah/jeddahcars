@@ -6,9 +6,13 @@
 // import CitiesWeServe from "./components/sections/CitiesWeServe";
 // import Contact from "./components/sections/Contact";
 
+import Footer from "./components/layout/Footer";
 import AboutSection from "./components/sections/AboutSection";
+import FAQSection from "./components/sections/FAQSection";
 import HeroSection from "./components/sections/Hero";
+import HowItWorksSection from "./components/sections/HowItWorksSection";
 import TrustIntroAndVideoSection from "./components/sections/TrustIntroAndVideoSection";
+import WorkGallerySection from "./components/sections/WorkGallerySection";
 
 
 
@@ -22,6 +26,11 @@ export default function Home() {
     <HeroSection/>
     <AboutSection/>
     <TrustIntroAndVideoSection/>
+    <WorkGallerySection/>
+    <FAQSection/>
+    <HowItWorksSection/>
+
+    <Footer/>
     
       {/* <Hero />
       <Brands />
