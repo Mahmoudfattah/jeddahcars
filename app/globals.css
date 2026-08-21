@@ -2,7 +2,7 @@
 
 /* ==========================================================================
    BA3HACASH — GLOBAL DESIGN SYSTEM
-   Brand: Smart Blue / Premium Automotive
+   Brand: Smart Blue / Premium Automotive — DARK THEME
    Stack: Next.js + Tailwind CSS v4
    ========================================================================== */
 
@@ -18,24 +18,23 @@
   --brand-hover: #0f85fa;
   --brand-light: #4ba3fb;
   --brand-soft: #87c2fd;
-  /* --brand-pale: #c3e0fe; */
-  --brand-pale: black;
+  --brand-pale: #0a2a4d;
 
   /* ============================================================
      SECONDARY BLUE
      ============================================================ */
 
-  --sapphire: #0353a4;
-  --sapphire-dark: #012242;
-  --sapphire-light: #3698fb;
+  --sapphire: #3698fb;
+  --sapphire-dark: #0353a4;
+  --sapphire-light: #87c2fd;
 
   /* ============================================================
      NAVY SYSTEM
      ============================================================ */
 
-  --navy: #001233;
-  --navy-dark: #000714;
-  --navy-deep: #00040a;
+  --navy: #e6ecf5;
+  --navy-dark: #f4f7fb;
+  --navy-deep: #ffffff;
 
   --navy-medium: #001845;
   --navy-blue: #002855;
@@ -44,113 +43,113 @@
      SLATE SYSTEM
      ============================================================ */
 
-  --slate-900: #131519;
-  --slate-800: #252a32;
-  --slate-700: #383f4c;
-  --slate-600: #4b5365;
-  --slate-500: #5c677d;
-  --slate-400: #79859c;
-  --slate-300: #9ba3b5;
-  --slate-200: #bcc2ce;
-  --slate-100: #dee0e6;
+  --slate-900: #f5f6f8;
+  --slate-800: #dee0e6;
+  --slate-700: #bcc2ce;
+  --slate-600: #9ba3b5;
+  --slate-500: #79859c;
+  --slate-400: #5c677d;
+  --slate-300: #4b5365;
+  --slate-200: #383f4c;
+  --slate-100: #252a32;
 
   /* ============================================================
      GREY SYSTEM
      ============================================================ */
 
-  --grey-900: #191a1f;
-  --grey-800: #31353d;
-  --grey-700: #4a4f5c;
-  --grey-600: #62697a;
-  --grey-500: #7d8597;
-  --grey-400: #979dab;
-  --grey-300: #b1b6c0;
-  --grey-200: #cbced5;
-  --grey-100: #e5e7ea;
+  --grey-900: #f2f2f4;
+  --grey-800: #e5e7ea;
+  --grey-700: #cbced5;
+  --grey-600: #b1b6c0;
+  --grey-500: #979dab;
+  --grey-400: #7d8597;
+  --grey-300: #62697a;
+  --grey-200: #4a4f5c;
+  --grey-100: #31353d;
 
   /* ============================================================
      LAVENDER GREY
      ============================================================ */
 
-  --lavender-900: #1d1f24;
-  --lavender-800: #393d47;
-  --lavender-700: #565c6b;
-  --lavender-600: #737a8e;
+  --lavender-900: #eef0f2;
+  --lavender-800: #d5d7dd;
+  --lavender-700: #c0c4cd;
+  --lavender-600: #abb0bc;
   --lavender-500: #979dac;
-  --lavender-400: #abb0bc;
-  --lavender-300: #c0c4cd;
-  --lavender-200: #d5d7dd;
-  --lavender-100: #eaebee;
+  --lavender-400: #737a8e;
+  --lavender-300: #565c6b;
+  --lavender-200: #393d47;
+  --lavender-100: #1d1f24;
 
   /* ============================================================
-     LIGHT / SURFACE SYSTEM
+     DARK / SURFACE SYSTEM
      ============================================================ */
 
-  --background: #ffffff;
-  --background-soft: #f8fafc;
+  --background: #060810;
+  --background-soft: #0d1220;
 
-  --surface: #ffffff;
-  --surface-soft: #f1f5f9;
+  --surface: #0f1420;
+  --surface-soft: #161c2c;
 
   /* ============================================================
      TEXT SYSTEM
      ============================================================ */
 
-  --foreground: #001233;
-  --foreground-secondary: #33415c;
-  --foreground-muted: #7d8597;
+  --foreground: #f3f5f9;
+  --foreground-secondary: #b8c0d4;
+  --foreground-muted: #6c7690;
 
   /* ============================================================
      BORDER SYSTEM
      ============================================================ */
 
-  --border: #dee0e6;
-  --border-light: #eaebee;
-  --border-dark: #bcc2ce;
+  --border: #1e2536;
+  --border-light: #151a28;
+  --border-dark: #2b3348;
 
   /* ============================================================
      CTA SYSTEM
      ============================================================ */
 
-  --cta: #0466c8;
-  --cta-hover: #0353a4;
-  --cta-active: #023e7d;
+  --cta: #0f85fa;
+  --cta-hover: #4ba3fb;
+  --cta-active: #0466c8;
   --cta-text: #ffffff;
 
   /* ============================================================
      STATUS COLORS
      ============================================================ */
 
-  --success: #16a34a;
-  --success-soft: #dcfce7;
+  --success: #22c55e;
+  --success-soft: #0f2a1a;
 
   --warning: #f59e0b;
-  --warning-soft: #fef3c7;
+  --warning-soft: #2c2109;
 
-  --danger: #dc2626;
-  --danger-soft: #fee2e2;
+  --danger: #ef4444;
+  --danger-soft: #2c1212;
 
-  --info: #0466c8;
-  --info-soft: #e0f2fe;
+  --info: #0f85fa;
+  --info-soft: #0d1e33;
 
   /* ============================================================
      SHADOWS
      ============================================================ */
 
   --shadow-sm:
-    0 1px 2px rgba(0, 18, 51, 0.05);
+    0 1px 2px rgba(0, 0, 0, 0.35);
 
   --shadow-md:
-    0 4px 12px rgba(0, 18, 51, 0.08);
+    0 4px 14px rgba(0, 0, 0, 0.45);
 
   --shadow-lg:
-    0 10px 30px rgba(0, 18, 51, 0.10);
+    0 10px 34px rgba(0, 0, 0, 0.55);
 
   --shadow-xl:
-    0 20px 50px rgba(0, 18, 51, 0.14);
+    0 24px 60px rgba(0, 0, 0, 0.65);
 
   --shadow-brand:
-    0 10px 30px rgba(4, 102, 200, 0.20);
+    0 10px 30px rgba(15, 133, 250, 0.35);
 
   /* ============================================================
      RADIUS
@@ -184,6 +183,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -212,7 +212,7 @@ body {
 
 ::selection {
   background: var(--brand-pale);
-  color: var(--navy);
+  color: var(--foreground);
 }
 
 
@@ -302,7 +302,7 @@ p {
    ========================================================================== */
 
 .text-brand {
-  color: var(--brand);
+  color: var(--brand-light);
 }
 
 .text-navy {
@@ -318,7 +318,7 @@ p {
 }
 
 .bg-navy {
-  background: var(--navy);
+  background: var(--navy-medium);
 }
 
 .bg-soft {
@@ -355,7 +355,7 @@ p {
 .card:hover {
   transform: translateY(-2px);
 
-  border-color: var(--brand-pale);
+  border-color: var(--brand);
 
   box-shadow: var(--shadow-lg);
 }
@@ -380,7 +380,6 @@ p {
   color: var(--cta-text);
 
   border: 1px solid var(--cta);
-  /* border-radius: var(--radius-lg); */
 
   font-weight: 600;
 
@@ -439,11 +438,11 @@ p {
 }
 
 .btn-secondary:hover {
-  background: var(--background-soft);
+  background: var(--surface-soft);
 
   border-color: var(--brand);
 
-  color: var(--brand);
+  color: var(--brand-light);
 }
 
 
@@ -478,7 +477,7 @@ p {
   border-color: var(--brand);
 
   box-shadow:
-    0 0 0 3px rgba(4, 102, 200, 0.12);
+    0 0 0 3px rgba(15, 133, 250, 0.18);
 }
 
 
@@ -500,7 +499,7 @@ p {
   background:
     linear-gradient(
       135deg,
-      var(--navy) 0%,
+      var(--navy-deep) 0%,
       var(--brand-deep) 50%,
       var(--brand) 100%
     );
@@ -522,8 +521,8 @@ p {
 
 .brand-glow {
   box-shadow:
-    0 0 0 1px rgba(4, 102, 200, 0.08),
-    0 20px 60px rgba(4, 102, 200, 0.12);
+    0 0 0 1px rgba(15, 133, 250, 0.15),
+    0 20px 60px rgba(15, 133, 250, 0.20);
 }
 
 
@@ -554,4 +553,38 @@ p {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+@utility flex-center {
+    @apply flex justify-center items-center;
+}
+
+@utility col-center {
+    @apply flex flex-col justify-center items-center;
+}
+
+@utility abs-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility text-gradient {
+    background: linear-gradient(to bottom, #ffffff, #6c7690);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@utility radial-gradient {
+    background: radial-gradient(
+            circle at center,
+            #1a2030 0%,
+            #060810 50%,
+            transparent 100%
+    );
+}
+
+@layer components {
+    .noisy {
+        @apply absolute inset-0 size-full bg-[url("/images/noise.png")];
+    }
 }

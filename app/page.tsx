@@ -6,7 +6,10 @@
 // import CitiesWeServe from "./components/sections/CitiesWeServe";
 // import Contact from "./components/sections/Contact";
 
-import Hero1 from "./components/sections/Hero";
+import HeroSection from "./components/sections/Hero";
+
+
+
 
 export default function Home() {
   const phoneNumber = "0562117196";
@@ -14,7 +17,10 @@ export default function Home() {
 
   return (
     <>
-    <Hero1/>
+    <HeroSection/>
+    <div className="h-dvh">
+
+    </div>
       {/* <Hero />
       <Brands />
       <About />
