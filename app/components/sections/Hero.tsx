@@ -12,8 +12,8 @@ export default function HeroSection() {
           {/* ========================================================
               TEXT COLUMN
           ======================================================== */}
-          <div className="order-2 flex flex-col gap-6 lg:order-1 lg:col-span-5">
-            <p className="text-sm font-semibold text-[var(--brand-light)]">
+          <div className="order-2 flex flex-col gap-3 sm:gap-6 lg:order-1 lg:col-span-5">
+            <p className="text-sm font-semibold text-[var(--brand-light)] ">
               تشليح · تالفة · متعطلة · سكراب · مصدومة — جدة
             </p>
 
