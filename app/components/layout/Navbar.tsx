@@ -234,10 +234,10 @@ export default function Navbar() {
                   group
                   flex
                   items-center
-                  gap-3
+                  gap-1
                   rounded-full
                   px-3
-                  py-2
+                  py-1
                   transition-all
                   duration-300
                   hover:bg-white/30
@@ -247,39 +247,29 @@ export default function Navbar() {
                 <div
                   className="
                     flex
-                    h-11
-                    w-11
+                    h-12
+                    w-12
                     items-center
                     justify-center
                     rounded-full
-                    border
-                    border-white/60
-                    bg-white/40
-                    backdrop-blur-xl
-                    shadow-sm
+                  
+               
                     transition-transform
                     duration-300
                     group-hover:scale-105
                   "
                 >
-                  <Image
-                    src="/logocut.png"
+                <Image
+                    src="/logonav.webp"
                     alt="شراء السيارات المصدومة"
-                    width={40}
-                    height={40}
+                    width={48}
+                    height={48}
                     priority
-                    className="object-contain"
+                    className="object-contain "
                   />
                 </div>
 
-                <span
-                  className="
-                    whitespace-nowrap
-                    text-base
-                    font-bold
-                    text-navy
-                  "
-                >
+                <span className="  whitespace-nowrap text-base font-bold text-[var(--foreground)]">
                   شراء السيارات المصدومة
                 </span>
               </Link>
@@ -465,8 +455,8 @@ export default function Navbar() {
                 aria-label="الرئيسية"
                 className="
                   flex
-                  h-[42px]
-                  w-[42px]
+                  h-12
+                  w-12
                   items-center
                   justify-center
                   rounded-full
@@ -481,10 +471,10 @@ export default function Navbar() {
                 "
               >
                 <Image
-                  src="/logocut.webp"
+                  src="/logonav.webp"
                   alt="شراء السيارات المصدومة"
-                  width={31}
-                  height={31}
+                  width={30}
+                  height={30}
                   priority
                   className="object-contain"
                 />

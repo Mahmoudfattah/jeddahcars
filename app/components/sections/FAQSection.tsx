@@ -5,28 +5,40 @@ import { ChevronDown, MessageCircle } from "lucide-react";
 
 const faqs = [
   {
-    id: "no-registration",
-    question: "هل تشترون السيارة بدون استمارة سارية؟",
+    id: "accident-cars",
+    question: "هل تشترون السيارات المصدومة من الحوادث؟",
     answer:
-      "نعم، نشتري السيارة حتى لو كانت الاستمارة منتهية أو غير سارية. نتكفل بإنهاء إجراءات إسقاط اللوحة ونقل الملكية بالكامل ضمن الخطوات النظامية المطلوبة.",
-  },
-  {
-    id: "evaluation-time",
-    question: "كم يستغرق تقييم السيارة والحصول على سعر؟",
-    answer:
-      "بعد إرسال صور السيارة عبر واتساب مع تفاصيل الموديل والحالة، نعطيك تقييمًا وسعرًا واضحًا خلال دقائق. لا حاجة لموعد أو معاينة طويلة قبل معرفة السعر التقريبي.",
-  },
-  {
-    id: "free-pickup",
-    question: "هل السحب فعلًا مجاني من أي حي في جدة؟",
-    answer:
-      "نعم، نوفر سطحة مجانية لسحب السيارة من موقعك داخل جدة، سواء كنت في شمال المدينة أو جنوبها أو شرقها أو غربها، بعد الاتفاق على السعر مباشرة.",
+      "نعم، نشتري السيارات المصدومة والمتضررة من الحوادث بمختلف الحالات، سواء كانت الأضرار في الهيكل أو المحرك أو الأجزاء الخارجية. أرسل صور السيارة وبياناتها عبر واتساب للحصول على تقييم مبدئي.",
   },
   {
     id: "car-condition",
     question: "هل تشترون السيارة مهما كانت درجة الضرر؟",
     answer:
-      "نشتري السيارات المصدومة بجميع درجات الضرر، من ضرر بسيط قابل للإصلاح إلى تلف كامل غير قابل للتشغيل، بالإضافة إلى سيارات التشليح والسكراب.",
+      "نشتري السيارات المصدومة والمتضررة بمختلف درجات الضرر، من الأضرار البسيطة والقابلة للإصلاح إلى السيارات المتضررة بشدة أو غير القابلة للتشغيل، بالإضافة إلى سيارات التشليح والسكراب. يتم تحديد السعر بناءً على حالة السيارة ومواصفاتها.",
+  },
+  {
+    id: "evaluation-time",
+    question: "كم يستغرق تقييم السيارة والحصول على سعر؟",
+    answer:
+      "بعد إرسال صور السيارة عبر واتساب مع تفاصيل الموديل وسنة الصنع وحالتها، يتم تقييم السيارة وتقديم سعر مبدئي خلال دقائق في أغلب الحالات. لا تحتاج إلى حجز موعد أو الانتظار لفترة طويلة لمعرفة السعر التقريبي.",
+  },
+  {
+    id: "free-pickup",
+    question: "هل توفرون سطحة لسحب السيارة من موقعي؟",
+    answer:
+      "نعم، نوفر خدمة سحب ونقل السيارات التي يتم الاتفاق على شرائها بواسطة سطحة. يتم تنسيق موقع وموعد الاستلام معك بعد الاتفاق على السعر واستكمال الإجراءات المطلوبة.",
+  },
+  {
+    id: "no-registration",
+    question: "هل تشترون السيارة بدون استمارة سارية؟",
+    answer:
+      "نعم، نشتري السيارات حتى لو كانت الاستمارة منتهية أو غير سارية. نساعدك في استكمال الإجراءات النظامية المطلوبة لإسقاط اللوحات ونقل الملكية، حسب حالة السيارة والأوراق المتوفرة.",
+  },
+  {
+    id: "payment",
+    question: "متى يتم دفع قيمة السيارة؟",
+    answer:
+      "بعد الاتفاق على السعر واستكمال إجراءات البيع ونقل الملكية أو الإجراءات النظامية المناسبة لحالة السيارة، يتم استكمال عملية الدفع وفق الاتفاق بين الطرفين.",
   },
 ];
 
@@ -34,10 +46,13 @@ export default function FAQSection() {
   const [openId, setOpenId] = useState<string | null>(faqs[0].id);
 
   return (
-    <section className="relative overflow-hidden py-16 sm:py-24" dir="rtl">
-
-
-  <div
+    <section
+      className="relative overflow-hidden py-16 sm:py-24"
+      dir="rtl"
+      aria-labelledby="faq-heading"
+    >
+      {/* Subtle background decoration */}
+      <div
         aria-hidden="true"
         className="
           pointer-events-none
@@ -68,119 +83,349 @@ export default function FAQSection() {
       />
 
       <div className="container-custom relative z-10 px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          
-          {/* Left column (in RTL: right side) — heading + CTA, sticky on desktop */}
-          <div className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-32 lg:self-start">
-            <div className="inline-flex items-center gap-2 w-fit rounded-full bg-[#162032] border border-white/10 px-4 py-1.5 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" />
-              <span className="text-sm font-bold text-[#38bdf8]">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* Content + CTA */}
+          <div
+            className="
+              flex
+              flex-col
+              gap-6
+              lg:sticky
+              lg:top-32
+              lg:col-span-5
+              lg:self-start
+            "
+          >
+            {/* Section badge */}
+            <div
+              className="
+                inline-flex
+                w-fit
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-[var(--border)]
+                bg-[var(--surface)]
+                px-4
+                py-1.5
+                shadow-sm
+              "
+            >
+              <span
+                aria-hidden="true"
+                className="
+                  h-2
+                  w-2
+                  rounded-full
+                  bg-[var(--brand-light)]
+                  animate-pulse
+                "
+              />
+
+              <span
+                className="
+                  text-sm
+                  font-bold
+                  text-[var(--brand-light)]
+                "
+              >
                 الأسئلة الشائعة
               </span>
             </div>
-            
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.3] text-white tracking-tight">
-              أسئلة يطرحها
-              <br />
-              عملاؤنا في جدة
-            </h2>
-            
-            <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-md">
-              لم تجد إجابة سؤالك؟ فريقنا متواجد دائمًا للرد على كافة استفساراتك وتقييم سيارتك فوراً.
-            </p>
 
-            <a
-              href="https://wa.me/9665XXXXXXXX"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* SEO-focused heading */}
+            <h2
+              id="faq-heading"
               className="
-                group w-fit flex items-center gap-4 rounded-full bg-white 
-                pl-1.5 pr-6 py-1.5 mt-2 shadow-[0_4px_20px_rgba(37,211,102,0.15)] 
-                hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(37,211,102,0.25)] 
-                transition-all duration-300 ease-out
+                text-3xl
+                font-extrabold
+                leading-[1.3]
+                tracking-tight
+                text-[var(--foreground)]
+                sm:text-4xl
+                lg:text-5xl
               "
             >
-              <span className="text-sm font-bold text-slate-900 group-hover:text-black transition-colors">
+              أسئلة شائعة عن شراء
+              <br />
+              السيارات المصدومة
+            </h2>
+
+            {/* Supporting content */}
+            <p
+              className="
+                max-w-md
+                text-base
+                leading-relaxed
+                text-[var(--foreground-muted)]
+                sm:text-lg
+              "
+            >
+              تعرف على إجابات أهم الأسئلة حول شراء السيارات المصدومة
+              والمتضررة، تقييم السيارة، إجراءات البيع، وسحب ونقل السيارة.
+            </p>
+
+            {/* WhatsApp CTA */}
+            <a
+              href="https://wa.me/966508374454"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="تواصل معنا عبر واتساب لتقييم سيارتك"
+              className="
+                group
+                mt-2
+                flex
+                w-fit
+                items-center
+                gap-4
+                rounded-full
+                bg-white
+                py-1.5
+                pl-1.5
+                pr-6
+                shadow-[0_4px_20px_rgba(37,211,102,0.15)]
+                transition-all
+                duration-300
+                ease-out
+                hover:-translate-y-1
+                hover:shadow-[0_8px_25px_rgba(37,211,102,0.25)]
+                focus-visible:outline-none
+                focus-visible:ring-2
+                focus-visible:ring-[#25D366]
+                focus-visible:ring-offset-2
+              "
+            >
+              <span
+                className="
+                  text-sm
+                  font-bold
+                  text-slate-900
+                  transition-colors
+                  group-hover:text-black
+                "
+              >
                 اسألنا على واتساب
               </span>
-              <div className="w-11 h-11 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
-                <MessageCircle size={22} className="drop-shadow-sm" />
-              </div>
+
+              <span
+                aria-hidden="true"
+                className="
+                  flex
+                  h-11
+                  w-11
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-[#25D366]
+                  text-white
+                  transition-transform
+                  duration-300
+                  group-hover:scale-105
+                "
+              >
+                <MessageCircle
+                  size={22}
+                  strokeWidth={2.2}
+                />
+              </span>
             </a>
           </div>
 
-          {/* Right column (in RTL: left side) — accordion */}
-          <div className="lg:col-span-7 flex  flex-col gap-4">
+          {/* FAQ Accordion */}
+          <div
+            className="
+              flex
+              flex-col
+              gap-4
+              lg:col-span-7
+            "
+          >
             {faqs.map((faq) => {
               const isOpen = openId === faq.id;
-              
+
               return (
                 <div
                   key={faq.id}
                   className={`
-                    group relative overflow-hidden cursor-pointer rounded-[24px]  border transition-all duration-500 ease-out
+                    group
+                    relative
+                    overflow-hidden
+                    rounded-[24px]
+                    border
+                    transition-all
+                    duration-500
+                    ease-out
                     ${
                       isOpen
-                        ? "border-[#38bdf8]/40 bg-[#162438] shadow-[0_8px_30px_rgba(56,189,248,0.06)]"
-                        : "border-white/5 bg-[#111827] hover:bg-[#162032] hover:border-white/10"
+                        ? `
+                          border-[var(--brand)]/40
+                          bg-[var(--surface-soft)]
+                          shadow-[0_8px_30px_rgba(4,102,200,0.06)]
+                        `
+                        : `
+                          border-[var(--border)]
+                          bg-[var(--surface)]
+                          hover:border-[var(--border-dark)]
+                          hover:bg-[var(--surface-soft)]
+                        `
                     }
                   `}
                 >
+                  {/* Question button */}
                   <button
-                    onClick={() => setOpenId(isOpen ? null : faq.id)}
+                    type="button"
+                    onClick={() =>
+                      setOpenId(isOpen ? null : faq.id)
+                    }
                     aria-expanded={isOpen}
                     aria-controls={`faq-content-${faq.id}`}
                     id={`faq-btn-${faq.id}`}
-                    className="w-full flex items-center justify-between gap-4 text-right px-6 py-5 sm:px-8 sm:py-6 outline-none focus-visible:ring-2   focus-visible:ring-[#38bdf8]"
+                    className="
+                      flex
+                      w-full
+                      items-center
+                      justify-between
+                      gap-4
+                      px-6
+                      py-5
+                      text-right
+                      outline-none
+                      focus-visible:ring-2
+                      focus-visible:ring-[var(--brand-light)]
+                      focus-visible:ring-inset
+                      sm:px-8
+                      sm:py-6
+                    "
                   >
-                    <span 
+                    <span
                       className={`
-                        font-bold text-base sm:text-lg transition-colors duration-300 pr-1
-                        ${isOpen ? "text-[#38bdf8]" : "text-white group-hover:text-slate-200"}
+                        pr-1
+                        text-base
+                        font-bold
+                        leading-relaxed
+                        transition-colors
+                        duration-300
+                        sm:text-lg
+                        ${
+                          isOpen
+                            ? "text-[var(--brand-light)]"
+                            : "text-[var(--foreground)] group-hover:text-[var(--foreground-secondary)]"
+                        }
                       `}
                     >
                       {faq.question}
                     </span>
-                    
-                    <div 
+
+                    {/* Chevron */}
+                    <span
+                      aria-hidden="true"
                       className={`
-                        flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all duration-500
+                        flex
+                        h-10
+                        w-10
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        transition-all
+                        duration-500
                         ${
-                          isOpen 
-                            ? "bg-[#38bdf8] text-white shadow-[0_4px_14px_rgba(56,189,248,0.3)] rotate-180" 
-                            : "bg-white text-slate-800 group-hover:scale-105"
+                          isOpen
+                            ? `
+                              rotate-180
+                              bg-[var(--brand)]
+                              text-white
+                              shadow-[0_4px_14px_rgba(4,102,200,0.3)]
+                            `
+                            : `
+                              bg-white
+                              text-slate-800
+                              shadow-sm
+                              group-hover:scale-105
+                            `
                         }
                       `}
                     >
-                      <ChevronDown size={22} strokeWidth={2.5} />
-                    </div>
+                      <ChevronDown
+                        size={22}
+                        strokeWidth={2.5}
+                      />
+                    </span>
                   </button>
 
+                  {/* Answer */}
                   <div
                     id={`faq-content-${faq.id}`}
                     role="region"
                     aria-labelledby={`faq-btn-${faq.id}`}
-                    className={`grid transition-all duration-500 ease-in-out ${
-                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                    }`}
+                    className={`
+                      grid
+                      transition-all
+                      duration-500
+                      ease-in-out
+                      ${
+                        isOpen
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      }
+                    `}
                   >
-                    <div className="overflow-hidden ">
-                      <p className="px-6 pb-6 sm:px-8 sm:pb-7 pt-0 text-slate-300 text-[15px] sm:text-base leading-relaxed pr-6 border-r-2 border-transparent relative">
-                        {/* Decorative line next to text when open */}
-                        <span className={`absolute sm:right-6 right-2 top-1 bottom-8 w-0.5 rounded-full transition-colors duration-500 delay-100 ${isOpen ? "bg-[#38bdf8]/40" : "bg-transparent"}`}></span>
-                        {faq.answer}
-                      </p>
+                    <div className="overflow-hidden">
+                      <div
+                        className="
+                          relative
+                          px-6
+                          pb-6
+                          sm:px-8
+                          sm:pb-7
+                        "
+                      >
+                        {/* Accent line */}
+                        <span
+                          aria-hidden="true"
+                          className={`
+                            absolute
+                            right-2
+                            top-1
+                            bottom-8
+                            w-0.5
+                            rounded-full
+                            transition-all
+                            duration-500
+                            sm:right-6
+                            ${
+                              isOpen
+                                ? "bg-[var(--brand)]/40"
+                                : "bg-transparent"
+                            }
+                          `}
+                        />
+
+                        <p
+                          className="
+                            pr-5
+                            text-[15px]
+                            leading-[1.9]
+                            text-[var(--foreground-secondary)]
+                            sm:pr-7
+                            sm:text-base
+                          "
+                        >
+                          {faq.answer}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               );
             })}
           </div>
-          
         </div>
       </div>
 
-      {/* FAQPage schema */}
+      {/* FAQ Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

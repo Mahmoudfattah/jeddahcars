@@ -1,43 +1,43 @@
 import type { Metadata } from "next";
-import { Cairo, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/layout/Navbar";
 
-/* Display font — headings, hero, CTAs */
-const cairo = Cairo({
+/* Primary website font — optimized for Arabic readability */
+const ibmPlexArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic", "latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-/* Body font — paragraphs, labels, nav */
-const plexArabic = IBM_Plex_Sans_Arabic({
-  subsets: ["arabic", "latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-arabic",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"), // TODO: عدّل للدومين الفعلي
+  metadataBase: new URL("https://example.com"), // TODO: replace with your real domain
+
   title: {
-    default: "شراء سيارات مصدومة بأفضل سعر | كاش فوري وسطحة مجانية",
-    template: "%s | [اسم البراند]",
+    default:
+      "شراء سيارات مصدومة وتالفة وتشليح في جدة | تقييم فوري وسطحة مجانية",
+    template: "%s | شراء السيارات المصدومة",
   },
+
   description:
-    "نشتري سيارتك المصدومة أو التالفة بأفضل سعر فوري، في جميع مدن السعودية. احصل على تقدير سعر فوري أونلاين، دفع كاش، وسطحة مجانية لنقل السيارة.",
+    "نشتري جميع أنواع السيارات التشليح والتالفة والمتعطلة والسكراب والمصدومة في جدة، مع تقييم فوري، وسحب مجاني من أمام المنزل، وإتمام إجراءات إسقاط اللوحات. تواصل معنا: 0508374454",
+
   keywords: [
-    "شراء سيارات مصدومة",
-    "بيع سيارات مصدومة",
-    "سيارات تشليح",
-    "شراء سيارات تالفة السعودية",
+    "شراء سيارات مصدومة جدة",
+    "بيع سيارات مصدومة جدة",
+    "سيارات تشليح جدة",
+    "شراء سيارات تالفة جدة",
+    "سيارات متعطلة جدة",
+    "سيارات سكراب جدة",
   ],
+
   openGraph: {
     type: "website",
     locale: "ar_SA",
-    siteName: "[اسم البراند]",
+    siteName: "شراء السيارات المصدومة",
   },
+
   alternates: {
     canonical: "/",
     languages: {
@@ -55,13 +55,14 @@ export default function RootLayout({
     <html
       lang="ar"
       dir="rtl"
-      className={`${cairo.variable} ${plexArabic.variable}`}
+      className={ibmPlexArabic.variable}
     >
       <body
-        suppressHydrationWarning={true}
-        className="bg-white text-[var(--color-ink)] antialiased"
+        suppressHydrationWarning
+        className="bg-background text-[var(--foreground)] antialiased font-arabic"
       >
         <Navbar />
+
         <main>{children}</main>
       </body>
     </html>

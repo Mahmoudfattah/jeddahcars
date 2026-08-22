@@ -49,199 +49,56 @@ export default function WorkGallerySection() {
       className="bg-background py-4 font-sans"
       aria-labelledby="gallery-title"
       id="cars"
+      dir="rtl"
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5 md:px-6">
-
-        {/* =========================
-            SECTION HEADER
-        ========================= */}
-        <div
-          className="
-            text-center
-            max-w-3xl
-            mx-auto
-            flex
-            flex-col
-            items-center
-            gap-3
-            sm:gap-4
-            mb-8
-            sm:mb-10
-            md:mb-12
-          "
-        >
-          <span className="text-xs sm:text-sm font-semibold text-[var(--brand-light)]">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-5 md:px-6">
+        {/* SECTION HEADER */}
+        <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center gap-3 text-center sm:mb-10 sm:gap-4 md:mb-12">
+          <span className="text-xs font-semibold text-[var(--brand-light)] sm:text-sm">
             شراء السيارات المصدومة في جدة
           </span>
 
           <h2
             id="gallery-title"
-            className="
-              text-2xl
-              sm:text-3xl
-              md:text-4xl
-              font-extrabold
-              text-[var(--foreground)]
-              leading-[1.35]
-              px-2
-            "
+            className="px-2 text-2xl font-extrabold leading-[1.35] text-[var(--foreground)] sm:text-3xl md:text-4xl"
           >
             سيارات مصدومة وتالفة اشتريناها في جدة
           </h2>
 
-          <p
-            className="
-              text-sm
-              sm:text-base
-              md:text-lg
-              text-[var(--foreground-secondary)]
-              leading-7
-              sm:leading-relaxed
-              max-w-2xl
-              px-1
-            "
-          >
+          <p className="max-w-2xl px-1 text-sm leading-7 text-[var(--foreground-secondary)] sm:text-base sm:leading-relaxed md:text-lg">
             نماذج حقيقية لسيارات مصدومة وتالفة قمنا بتقييمها وشرائها في جدة،
-            مهما كان نوع الضرر، مع سحب مجاني وإنهاء إجراءات الإسقاط ونقل الملكية.
+            مهما كان نوع الضرر، مع سحب مجاني وإنهاء إجراءات الإسقاط ونقل
+            الملكية.
           </p>
         </div>
 
-        {/* 
-          Desktop layout remains the same:
-          LEFT 65% / RIGHT 35%
-
-          Mobile:
-          - Full-width cards
-          - Better spacing
-          - Better card heights
-          - Better text readability
-        */}
-        <div
-          className="
-            flex
-            flex-col
-            lg:flex-row
-            gap-4
-            lg:gap-5
-          "
-          dir="ltr"
-        >
-
-          {/* =========================================================
-              LEFT COLUMN - 65%
-          ========================================================= */}
-          <div className="w-full lg:w-[65%] flex flex-col gap-4 lg:gap-5">
-
-            {/* =========================
-                LARGE FEATURED CARD
-            ========================= */}
-            <article
-              className="
-                relative
-                w-full
-                h-[360px]
-                sm:h-[420px]
-                md:h-[470px]
-                lg:h-[500px]
-                rounded-[10px]
-                overflow-hidden
-                group
-              "
-            >
+        <div className="flex flex-col gap-4 lg:flex-row lg:gap-5" dir="ltr">
+          {/* LEFT COLUMN - 65% */}
+          <div className="flex w-full flex-col gap-4 lg:w-[65%] lg:gap-5">
+            {/* LARGE FEATURED CARD */}
+            <article className="group relative h-[360px] w-full overflow-hidden rounded-[10px] sm:h-[420px] md:h-[470px] lg:h-[500px]">
               <Image
                 src={gallery[0].src}
                 alt={gallery[0].alt}
                 fill
                 priority
-                className="
-                  object-cover
-                  transition-transform
-                  duration-700
-                  group-hover:scale-105
-                "
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 65vw"
               />
 
-              {/* Gradient */}
-              <div
-                className="
-                  absolute
-                  inset-0
-                  bg-gradient-to-t
-                  from-[#12131c]/95
-                  via-[#12131c]/30
-                  to-transparent
-                "
-              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#12131c]/95 via-[#12131c]/30 to-transparent" />
 
-              {/* Brand */}
-              <div className="absolute top-4 left-4 sm:top-5 sm:left-5">
-                <span
-                  className="
-                    text-white/90
-                    font-bold
-                    text-[9px]
-                    sm:text-[11px]
-                    tracking-[0.15em]
-                    uppercase
-                    drop-shadow-md
-                  "
-                >
-                 
-                </span>
-              </div>
-
-              {/* Main Text */}
               <div
-                className="
-                  absolute
-                  bottom-5
-                  right-5
-                  left-5
-                  sm:bottom-7
-                  sm:right-7
-                  sm:left-auto
-                  md:bottom-8
-                  md:right-8
-                  max-w-[90%]
-                  sm:max-w-[75%]
-                "
+                className="absolute bottom-5 right-5 left-5 max-w-[90%] sm:bottom-7 sm:right-7 sm:left-auto sm:max-w-[75%] md:bottom-8 md:right-8"
                 dir="rtl"
               >
-                <h3
-                  className="
-                    text-xl
-                    sm:text-2xl
-                    md:text-3xl
-                    font-bold
-                    text-white
-                    mb-2
-                    sm:mb-3
-                    leading-[1.4]
-                    drop-shadow-md
-                  "
-                >
+                <h3 className="mb-2 text-xl font-bold leading-[1.4] text-white drop-shadow-md sm:mb-3 sm:text-2xl md:text-3xl">
                   {gallery[0].title}
                 </h3>
 
-                <div
-                  className="
-                    flex
-                    flex-col
-                    gap-1
-                    sm:gap-1.5
-                    text-gray-200
-                    text-xs
-                    sm:text-sm
-                    md:text-base
-                    leading-6
-                  "
-                >
+                <div className="flex flex-col gap-1 text-xs leading-6 text-gray-200 sm:gap-1.5 sm:text-sm md:text-base">
                   {gallery[0].tags?.map((tag) => (
-                    <p
-                      key={tag}
-                      className="drop-shadow-sm"
-                    >
+                    <p key={tag} className="drop-shadow-sm">
                       {tag}
                     </p>
                   ))}
@@ -249,82 +106,22 @@ export default function WorkGallerySection() {
               </div>
             </article>
 
-            {/* =========================
-                BOTTOM TWO CARDS
-            ========================= */}
-            <div
-              className="
-                flex
-                flex-col
-                sm:flex-row
-                gap-4
-                lg:gap-5
-              "
-            >
-
-              {/* Side Damage */}
-              <article
-                className="
-                  relative
-                  w-full
-                  sm:w-1/2
-                  h-[190px]
-                  sm:h-[220px]
-                  rounded-[10px]
-                  overflow-hidden
-                  group
-                "
-              >
+            {/* BOTTOM TWO CARDS */}
+            <div className="flex flex-col gap-4 sm:flex-row lg:gap-5">
+              <article className="group relative h-[190px] w-full overflow-hidden rounded-[10px] sm:h-[220px] sm:w-1/2">
                 <Image
                   src={gallery[1].src}
                   alt={gallery[1].alt}
                   fill
-                  className="
-                    object-cover
-                    transition-transform
-                    duration-700
-                    group-hover:scale-105
-                  "
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
 
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    bg-black/40
-                    group-hover:bg-black/50
-                    transition-colors
-                    duration-300
-                  "
-                />
-
-                <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
-                  <span
-                    className="
-                      text-white/80
-                      font-bold
-                      text-[9px]
-                      sm:text-[10px]
-                      tracking-[0.15em]
-                      uppercase
-                    "
-                  >
-                   
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
 
                 <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-5">
                   <h3
-                    className="
-                      text-white
-                      font-semibold
-                      text-base
-                      sm:text-lg
-                      leading-7
-                      drop-shadow-lg
-                      text-center
-                    "
+                    className="text-center text-base font-semibold leading-7 text-white drop-shadow-lg sm:text-lg"
                     dir="rtl"
                   >
                     {gallery[1].title}
@@ -332,151 +129,45 @@ export default function WorkGallerySection() {
                 </div>
               </article>
 
-              {/* Front Damage */}
-              <article
-                className="
-                  relative
-                  w-full
-                  sm:w-1/2
-                  h-[190px]
-                  sm:h-[220px]
-                  rounded-[10px]
-                  overflow-hidden
-                  group
-                "
-              >
+              <article className="group relative h-[190px] w-full overflow-hidden rounded-[10px] sm:h-[220px] sm:w-1/2">
                 <Image
                   src={gallery[2].src}
                   alt={gallery[2].alt}
                   fill
-                  className="
-                    object-cover
-                    transition-transform
-                    duration-700
-                    group-hover:scale-105
-                  "
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
 
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    bg-black/40
-                    group-hover:bg-black/50
-                    transition-colors
-                    duration-300
-                  "
-                />
-
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                  <span
-                    className="
-                      text-white/80
-                      font-bold
-                      text-[9px]
-                      sm:text-[10px]
-                      tracking-[0.15em]
-                      uppercase
-                    "
-                  >
-                   
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
 
                 <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-5">
                   <h3
-                    className="
-                      text-white
-                      font-semibold
-                      text-base
-                      sm:text-lg
-                      leading-7
-                      drop-shadow-lg
-                      text-center
-                    "
+                    className="text-center text-base font-semibold leading-7 text-white drop-shadow-lg sm:text-lg"
                     dir="rtl"
                   >
                     {gallery[2].title}
                   </h3>
                 </div>
               </article>
-
             </div>
           </div>
 
-          {/* =========================================================
-              RIGHT COLUMN - 35%
-          ========================================================= */}
-          <div className="w-full lg:w-[35%] flex flex-col gap-4 lg:gap-5">
-
-            {/* =========================
-                REAR DAMAGE
-            ========================= */}
-            <article
-              className="
-                relative
-                w-full
-                h-[240px]
-                sm:h-[260px]
-                lg:h-auto
-                lg:flex-1
-                lg:min-h-0
-                rounded-[10px]
-                overflow-hidden
-                group
-              "
-            >
+          {/* RIGHT COLUMN - 35% */}
+          <div className="flex w-full flex-col gap-4 lg:w-[35%] lg:gap-5">
+            <article className="group relative h-[240px] w-full overflow-hidden rounded-[10px] sm:h-[260px] lg:h-auto lg:min-h-0 lg:flex-1">
               <Image
                 src={gallery[3].src}
                 alt={gallery[3].alt}
                 fill
-                className="
-                  object-cover
-                  transition-transform
-                  duration-700
-                  group-hover:scale-105
-                "
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 35vw"
               />
 
-              <div
-                className="
-                  absolute
-                  inset-0
-                  bg-black/40
-                  group-hover:bg-black/50
-                  transition-colors
-                  duration-300
-                "
-              />
-
-              <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                <span
-                  className="
-                    text-white/80
-                    font-bold
-                    text-[9px]
-                    sm:text-[10px]
-                    tracking-[0.15em]
-                    uppercase
-                  "
-                >
-                 
-                </span>
-              </div>
+              <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
 
               <div className="absolute inset-0 flex items-center justify-center p-5">
                 <h3
-                  className="
-                    text-white
-                    font-semibold
-                    text-base
-                    sm:text-lg
-                    leading-7
-                    drop-shadow-lg
-                    text-center
-                  "
+                  className="text-center text-base font-semibold leading-7 text-white drop-shadow-lg sm:text-lg"
                   dir="rtl"
                 >
                   {gallery[3].title}
@@ -484,73 +175,20 @@ export default function WorkGallerySection() {
               </div>
             </article>
 
-            {/* =========================
-                HEAVY DAMAGE
-            ========================= */}
-            <article
-              className="
-                relative
-                w-full
-                h-[240px]
-                sm:h-[260px]
-                lg:h-auto
-                lg:flex-1
-                lg:min-h-0
-                rounded-[10px]
-                overflow-hidden
-                group
-              "
-            >
+            <article className="group relative h-[240px] w-full overflow-hidden rounded-[10px] sm:h-[260px] lg:h-auto lg:min-h-0 lg:flex-1">
               <Image
                 src={gallery[4].src}
                 alt={gallery[4].alt}
                 fill
-                className="
-                  object-cover
-                  transition-transform
-                  duration-700
-                  group-hover:scale-105
-                "
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 35vw"
               />
 
-              <div
-                className="
-                  absolute
-                  inset-0
-                  bg-black/40
-                  group-hover:bg-black/50
-                  transition-colors
-                  duration-300
-                "
-              />
-
-              <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
-                <span
-                  className="
-                    text-white/80
-                    font-bold
-                    text-[9px]
-                    sm:text-[10px]
-                    tracking-[0.15em]
-                    uppercase
-                  "
-                >
-                 
-                </span>
-              </div>
+              <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
 
               <div className="absolute inset-0 flex items-center justify-center p-5">
                 <h3
-                  className="
-                    text-white
-                    font-semibold
-                    text-base
-                    sm:text-lg
-                    leading-7
-                    drop-shadow-lg
-                    text-center
-                  "
+                  className="text-center text-base font-semibold leading-7 text-white drop-shadow-lg sm:text-lg"
                   dir="rtl"
                 >
                   {gallery[4].title}
@@ -558,48 +196,19 @@ export default function WorkGallerySection() {
               </div>
             </article>
 
-            {/* =========================
-                CONTACT CTA
-            ========================= */}
+            {/* CONTACT CTA */}
             <a
-              href="/contact"
-              aria-label="تواصل معنا لتقييم وشراء سيارتك المصدومة في جدة"
-              className="
-                w-full
-                min-h-[60px]
-                sm:min-h-[65px]
-                px-5
-                py-3
-                bg-[#5B58FF]
-                hover:bg-[#4946e6]
-                active:bg-[#403dd4]
-                transition-colors
-                duration-300
-                rounded-[10px]
-                flex
-                items-center
-                justify-center
-                text-center
-                shadow-[0_4px_30px_rgba(91,88,255,0.4)]
-                hover:shadow-[0_4px_35px_rgba(91,88,255,0.6)]
-                touch-manipulation
-              "
+              href="https://wa.me/966508374454"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="تواصل معنا على واتساب لتقييم وشراء سيارتك المصدومة في جدة"
+              className="flex min-h-[60px] w-full touch-manipulation items-center justify-center rounded-[10px] bg-[#5B58FF] px-5 py-3 text-center shadow-[0_4px_30px_rgba(91,88,255,0.4)] transition-colors duration-300 hover:bg-[#4946e6] hover:shadow-[0_4px_35px_rgba(91,88,255,0.6)] active:bg-[#403dd4] sm:min-h-[65px]"
               dir="rtl"
             >
-              <span
-                className="
-                  text-white
-                  font-semibold
-                  text-sm
-                  sm:text-base
-                  md:text-lg
-                  leading-6
-                "
-              >
+              <span className="text-sm font-semibold leading-6 text-white sm:text-base md:text-lg">
                 تواصل معنا لتقييم وشراء سيارتك
               </span>
             </a>
-
           </div>
         </div>
       </div>

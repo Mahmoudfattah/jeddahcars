@@ -32,35 +32,41 @@ export default function HowItWorksSection() {
     >
       <div className="container-custom relative z-10 px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto flex flex-col items-center gap-4 mb-14">
+        <div className="mx-auto mb-14 flex max-w-2xl flex-col items-center gap-4 text-center">
           <span className="text-sm font-semibold text-[var(--brand-light)]">
             كيف تبيع سيارتك
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] leading-[1.3]">
+
+          <h2 className="text-3xl font-extrabold leading-[1.3] text-[var(--foreground)] sm:text-4xl">
             ثلاث خطوات بسيطة، من التواصل إلى استلام المبلغ
           </h2>
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 relative">
-          {/* Connector line — desktop only, sits behind the cards */}
-          <div className="hidden sm:block absolute top-9 right-[16.5%] left-[16.5%] h-px bg-[var(--border)]" />
+        <div className="relative grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-6 lg:gap-8">
+          {/* Connector line — desktop only */}
+          <div
+            aria-hidden="true"
+            className="absolute left-[16.5%] right-[16.5%] top-9 hidden h-px bg-[var(--border)] sm:block"
+          />
 
           {steps.map((step) => {
             const Icon = step.icon;
+
             return (
               <div
                 key={step.number}
-                className="relative flex flex-col items-center text-center gap-4"
+                className="relative flex flex-col items-center gap-4 text-center"
               >
                 {/* Icon circle with number badge */}
                 <div className="relative z-10">
-                  <div className="w-[72px] h-[72px] rounded-full bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center">
-                    <div className="w-11 h-11 rounded-full bg-[var(--brand-pale)] flex items-center justify-center text-[var(--brand-light)]">
+                  <div className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--brand-pale)] text-[var(--brand-light)]">
                       <Icon size={20} />
                     </div>
                   </div>
-                  <span className="absolute -top-1 -left-1 w-6 h-6 rounded-full bg-[var(--brand)] text-white text-[11px] font-bold flex items-center justify-center">
+
+                  <span className="absolute -left-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--brand)] text-[11px] font-bold text-white">
                     {step.number.replace("0", "")}
                   </span>
                 </div>
@@ -68,7 +74,8 @@ export default function HowItWorksSection() {
                 <h3 className="text-lg font-bold text-[var(--foreground)]">
                   {step.title}
                 </h3>
-                <p className="text-sm text-[var(--foreground-secondary)] leading-relaxed max-w-[240px]">
+
+                <p className="max-w-[240px] text-sm leading-relaxed text-[var(--foreground-secondary)]">
                   {step.description}
                 </p>
               </div>
@@ -77,17 +84,21 @@ export default function HowItWorksSection() {
         </div>
 
         {/* CTA */}
-        <div className="flex justify-center mt-14">
+        <div className="mt-14 flex justify-center">
           <a
-            href="https://wa.me/9665XXXXXXXX"
+            href="https://wa.me/966508374454"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit flex items-center gap-4 rounded-full bg-white text-black! font-semibold py-1.5 pl-1.5 pr-6 hover:-translate-y-1 hover:bg-gray-200 transition duration-300"
+            aria-label="ابدأ الآن على واتساب"
+            className="flex w-fit items-center gap-4 rounded-full bg-white py-1.5 pl-1.5 pr-6 font-semibold !text-black transition duration-300 hover:-translate-y-1 hover:bg-gray-200"
           >
-            <span className="text-sm text-blue-950">ابدأ الآن على واتساب</span>
-            <div className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0">
+            <span className="text-sm text-blue-950">
+              ابدأ الآن على واتساب
+            </span>
+
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
               <ArrowLeft size={18} />
-            </div>
+            </span>
           </a>
         </div>
       </div>

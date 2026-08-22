@@ -100,9 +100,9 @@ export default function AboutSection() {
                 CONTACT CTA
             ====================================================== */}
 
-            <div className="flex items-center gap-2 mt-6">
+            {/* <div className="flex items-center gap-2 mt-6">
 
-              {/* WhatsApp Button */}
+            
               <a
                 href="https://wa.me/966508374454"
                 target="_blank"
@@ -135,7 +135,7 @@ export default function AboutSection() {
                 </div>
               </a>
 
-              {/* Phone Button */}
+            
               <a
                 href="tel:+966508374454"
                 aria-label="اتصل بنا"
@@ -150,8 +150,7 @@ export default function AboutSection() {
                   hover:bg-[#134f6b]
                   hover:-translate-y-1
                   shrink-0
-                  w-13
-                  h-13
+                  h-[52px] w-[52px]
                   transition
                   duration-300
                 "
@@ -159,7 +158,7 @@ export default function AboutSection() {
                 <Phone size={18} className="text-white" />
               </a>
 
-            </div>
+            </div> */}
           </div>
 
           {/* ========================================================

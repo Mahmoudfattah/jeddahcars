@@ -81,7 +81,7 @@ export default function Footer() {
                 متواجدون على مدار الساعة
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-3">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-3!">
                 جاهز تبيع سيارتك المصدومة؟
               </h2>
 
