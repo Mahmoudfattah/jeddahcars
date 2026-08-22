@@ -17,28 +17,28 @@ const gallery = [
     id: "side-damage",
     src: "/سيارة-مصدومة-من-الجانب-جدة.webp",
     alt: "شراء سيارة مصدومة من الجانب في جدة وتقييم أضرار الحوادث بأفضل سعر",
-    title: "شراء السيارات المتضررة من الحوادث",
+    title: "شراء السيارات المتضررة والغارقة  ",
     size: "sm",
   },
   {
     id: "front-damage-sunset",
     src: "/سيارة-مصدومة-من-الامام.webp",
     alt: "شراء سيارة مصدومة من الأمام في جدة مهما كان حجم الضرر أو حالة السيارة",
-    title: "شراء السيارات المصدومة من الأمام",
+    title: "شراء السيارات المصدومة والسكراب    ",
     size: "sm",
   },
   {
     id: "rear-damage",
     src: "/سيارة-مصدومة-من-الخلف.webp",
     alt: "شراء السيارات المصدومة من الخلف في جدة مع تقييم السيارة ونقل الملكية",
-    title: "شراء السيارات المصدومة من الخلف",
+    title: "  شراء السيارات المحروقه والمصدومة ",
     size: "sm",
   },
   {
     id: "heavy-front-damage",
     src: "/سيارة-تالفة-ضرر-كبير-امامي.webp",
     alt: "شراء السيارات التالفة والمصدومة بالكامل في جدة بأفضل سعر بعد التقييم",
-    title: "شراء السيارات التالفة بالكامل",
+    title: "شراء سيارات التشليح والتالفة ",
     size: "sm",
   },
 ];
@@ -202,10 +202,31 @@ export default function WorkGallerySection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="تواصل معنا على واتساب لتقييم وشراء سيارتك المصدومة في جدة"
-              className="flex min-h-[60px] w-full touch-manipulation items-center justify-center rounded-[10px] bg-[#5B58FF] px-5 py-3 text-center shadow-[0_4px_30px_rgba(91,88,255,0.4)] transition-colors duration-300 hover:bg-[#4946e6] hover:shadow-[0_4px_35px_rgba(91,88,255,0.6)] active:bg-[#403dd4] sm:min-h-[65px]"
+              className="
+              flex
+              min-h-[60px]
+              w-full
+              touch-manipulation
+              items-center
+              justify-center
+              rounded-[10px]
+              bg-[var(--cta)]
+              px-5
+              py-3
+              text-center
+              shadow-[var(--shadow-brand)]
+              transition-all
+              duration-300
+              hover:-translate-y-0.5
+              hover:bg-[var(--cta-hover)]
+              hover:shadow-[0_8px_30px_rgba(15,133,250,0.45)]
+              active:translate-y-0
+              active:bg-[var(--cta-active)]
+              sm:min-h-[65px]
+            "
               dir="rtl"
             >
-              <span className="text-sm font-semibold leading-6 text-white sm:text-base md:text-lg">
+              <span className="text-sm font-semibold leading-6 text-[var(--cta-text)] sm:text-base md:text-lg">
                 تواصل معنا لتقييم وشراء سيارتك
               </span>
             </a>
