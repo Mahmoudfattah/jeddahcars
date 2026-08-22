@@ -269,12 +269,12 @@ export default function TrustIntroAndVideoSection() {
                   "
                   controls
                   preload="metadata"
-                  poster="/video-poster.jpg"
+                  poster="/cover.webp"
                   playsInline
                   aria-label="فيديو يوضح خطوات شراء السيارات المصدومة والتالفة في جدة ومكة والطائف"
                 >
                   <source
-                    src="/video-optimized1.mp4"
+                    src="/video-optimized.mp4"
                     type="video/mp4"
                   />
 
@@ -337,8 +337,8 @@ export default function TrustIntroAndVideoSection() {
                       rounded-full
                       bg-[var(--brand-pale)]
                       text-[var(--brand-light)]
-                      sm:h-8
-                      sm:w-8
+                      sm:h-5
+                      sm:w-5
                     "
                   >
                     <PlayCircle
@@ -356,8 +356,7 @@ export default function TrustIntroAndVideoSection() {
                       sm:text-xs
                     "
                   >
-                    شرح مبسط في أقل من دقيقة
-                  </span>
+                    شرح مبسط في أقل من 15 ثانيه</span>
                 </div>
               </div>
 
