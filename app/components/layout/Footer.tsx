@@ -26,10 +26,10 @@ const otherSites = [
     label: "alnada-cars.com",
     href: "https://alnada-cars.com/sell-your-car-scrap-jeddah/",
   },
-  // {
-  //   label: "buying-damage-cars",
-  //   href: "https://buying-damage-cars.vercel.app/",
-  // },
+  {
+    label: "haraj.com",
+    href: "https://haraj.com.sa/users/%D8%AA%D8%B4%D9%84%D9%8A%D8%AD%20%D8%A7%D9%84%D9%86%D8%AF%D9%89%20%D9%84%D8%B9%D8%A7%D9%84%D9%85%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/updateemail/email/a1134232816@gmail.com/code/73824",
+  },
   {
     label: "silver-muffin",
     href: "https://silver-muffin-1fb75b.netlify.app/",
