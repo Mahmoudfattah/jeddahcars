@@ -12,16 +12,16 @@ const ibmPlexArabic = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"), // TODO: replace with your real domain
+  metadataBase: new URL("https://qeemahcar.com"), // TODO: replace with your real domain
 
   title: {
     default:
-      "شراء سيارات مصدومة وتالفة وتشليح في جدة | تقييم فوري وسطحة مجانية",
+      "شراء سيارات مصدومة وتالفة وتشليح في جدة | تقييم فوري وسطحة مجانية ",
     template: "%s | شراء السيارات المصدومة",
   },
 
-  description:
-    "نشتري جميع أنواع السيارات التشليح والتالفة والمتعطلة والسكراب والمصدومة في جدة، مع تقييم فوري، وسحب مجاني من أمام المنزل، وإتمام إجراءات إسقاط اللوحات. تواصل معنا: 0508374454",
+description:
+  "تواصل معنا: 0508374454 — نشتري جميع أنواع السيارات التشليح والتالفة والمتعطلة والسكراب والمصدومة في جدة، مع تقييم فوري، وسحب مجاني من أمام المنزل، وإتمام إجراءات إسقاط اللوحات.",
 
   keywords: [
     "شراء سيارات مصدومة جدة",
