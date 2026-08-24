@@ -37,8 +37,11 @@ const otherSites = [
 ];
 
 const PHONE_DISPLAY = "0508374454";
+const PHONE_DISPLAY2 = "0563319110";
 const PHONE_TEL = "+966508374454";
+const PHONE_TEL2 = "+966563319110";
 const WHATSAPP_LINK = "https://wa.me/966508374454";
+const WHATSAPP_LINK2 = "https://wa.me/966563319110";
 const TIKTOK_LINK = "https://www.tiktok.com/@ahmdtop3";
 
 // Minimal TikTok glyph
@@ -94,7 +97,7 @@ export default function Footer() {
             {/* Contact Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
               {/* Phone */}
-              <a
+              {/* <a
                 href={`tel:${PHONE_TEL}`}
                 dir="rtl"
                 className="group flex items-center justify-center gap-3 w-full sm:w-auto min-w-[175px] h-14 px-5 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:border-[#38bdf8]/40 transition-all duration-300"
@@ -116,11 +119,59 @@ export default function Footer() {
                     {PHONE_DISPLAY}
                   </span>
                 </div>
+              </a> */}
+              <a
+                href={`tel:${PHONE_TEL2}`}
+                dir="rtl"
+                className="group flex items-center justify-center gap-3 w-full sm:w-auto min-w-[175px] h-14 px-5 rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10 hover:border-[#38bdf8]/40 transition-all duration-300"
+                aria-label={`اتصل بنا على ${PHONE_DISPLAY}`}
+              >
+                <div className="w-9 h-9 rounded-full bg-[#38bdf8]/10 text-[#38bdf8] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
+                  <Phone size={19} />
+                </div>
+
+                <div className="flex flex-col items-start leading-tight">
+                  <span className="text-xs text-slate-400">
+                    اتصل بنا
+                  </span>
+
+                  <span
+                    dir="ltr"
+                    className="text-sm font-bold text-white tracking-wide"
+                  >
+                    {PHONE_DISPLAY2}
+                  </span>
+                </div>
               </a>
 
               {/* WhatsApp */}
-              <a
+              {/* <a
                 href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                dir="rtl"
+                className="group flex items-center justify-center gap-3 w-full sm:w-auto min-w-[190px] h-14 px-5 rounded-full bg-[#25D366] text-white font-bold shadow-[0_0_20px_rgba(37,211,102,0.18)] hover:shadow-[0_0_30px_rgba(37,211,102,0.35)] hover:-translate-y-1 transition-all duration-300"
+                aria-label="راسلنا عبر واتساب"
+              >
+                <MessageCircle
+                  size={21}
+                  className="group-hover:scale-110 transition-transform duration-300 shrink-0"
+                />
+
+                <span className="text-base whitespace-nowrap">
+                  راسلنا واتساب
+                </span>
+
+                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                  <ArrowLeft
+                    size={17}
+                    className="group-hover:-translate-x-1 transition-transform duration-300"
+                  />
+                </div>
+              </a> */}
+              {/* WhatsApp */}
+              <a
+                href={WHATSAPP_LINK2}
                 target="_blank"
                 rel="noopener noreferrer"
                 dir="rtl"
@@ -176,17 +227,30 @@ export default function Footer() {
                   <Phone size={14} />
                 </div>
               </a>
+              <a
+                href={`tel:${PHONE_TEL2}`}
+                dir="ltr"
+                className="group flex items-center justify-end gap-3 w-fit px-4 py-2 rounded-xl bg-white/5 border border-white/5 hover:border-[#38bdf8]/30 hover:bg-[#162438] transition-all"
+              >
+                <span className="text-slate-300 font-medium tracking-wider group-hover:text-white transition-colors">
+                  {PHONE_DISPLAY2}
+                </span>
+
+                <div className="w-8 h-8 rounded-full bg-[#38bdf8]/10 text-[#38bdf8] flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Phone size={14} />
+                </div>
+              </a>
 
               {/* WhatsApp */}
               <a
-                href={WHATSAPP_LINK}
+                href={WHATSAPP_LINK2}
                 target="_blank"
                 rel="noopener noreferrer"
                 dir="ltr"
                 className="group flex items-center justify-end gap-3 w-fit px-4 py-2 rounded-xl bg-white/5 border border-white/5 hover:border-[#25D366]/30 hover:bg-[#25D366]/5 transition-all"
               >
                 <span className="text-slate-300 font-medium tracking-wider group-hover:text-white transition-colors">
-                  {PHONE_DISPLAY}
+                  {PHONE_DISPLAY2}
                 </span>
 
                 <div className="w-8 h-8 rounded-full bg-[#25D366]/10 text-[#25D366] flex items-center justify-center group-hover:scale-110 transition-transform">
