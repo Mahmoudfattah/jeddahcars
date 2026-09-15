@@ -5,12 +5,14 @@ import {
   MessageCircle,
   ExternalLink,
   ArrowLeft,
+  Facebook,
 } from "lucide-react";
 
 const quickLinks = [
   { label: "من نحن", href: "#about" },
   { label: "كيف تعمل الخدمة", href: "#how-it-works" },
   { label: "سيارات مصدومة", href: "#cars" },
+  { label: "المدونة", href: "https://sikrabsa.com/blog" },
 ];
 
 const otherSites = [
@@ -30,10 +32,7 @@ const otherSites = [
     label: "haraj.com",
     href: "https://haraj.com.sa/users/%D8%AA%D8%B4%D9%84%D9%8A%D8%AD%20%D8%A7%D9%84%D9%86%D8%AF%D9%89%20%D9%84%D8%B9%D8%A7%D9%84%D9%85%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/",
   },
-  {
-    label: "silver-muffin",
-    href: "https://silver-muffin-1fb75b.netlify.app/",
-  },
+ 
 ];
 
 const PHONE_DISPLAY = "0508374454";
@@ -43,6 +42,7 @@ const PHONE_TEL2 = "+966563319110";
 const WHATSAPP_LINK = "https://wa.me/966508374454";
 const WHATSAPP_LINK2 = "https://wa.me/966563319110";
 const TIKTOK_LINK = "https://www.tiktok.com/@ahmdtop3";
+const FACEBOOK_LINK = "https://www.facebook.com/share/1Ez8SPcBxB/";
 
 // Minimal TikTok glyph
 function TikTokIcon({ size = 15, className = "" }) {
@@ -334,7 +334,7 @@ export default function Footer() {
             </div>
 
             {/* Social Media Area */}
-            <div className="mt-4 pt-4 border-t border-white/5">
+            <div className="mt-4 pt-4 border-t border-white/5 flex flex-col gap-3">
               <a
                 href={TIKTOK_LINK}
                 target="_blank"
@@ -346,6 +346,19 @@ export default function Footer() {
                 </div>
 
                 تابعنا على تيك توك
+              </a>
+
+              <a
+                href={FACEBOOK_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors w-fit"
+              >
+                <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
+                  <Facebook size={16} />
+                </div>
+
+                تابعنا على فيسبوك
               </a>
             </div>
           </div>
