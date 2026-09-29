@@ -16,18 +16,18 @@ const quickLinks = [
 ];
 
 const otherSites = [
-  {
-    label: "ba3hacash.com",
-    href: "https://ba3hacash.com/",
-  },
-  {
-    label: "ahmed-alhawary.com",
-    href: "https://ahmed-alhawary.com/",
-  },
-  {
-    label: "alnada-cars.com",
-    href: "https://alnada-cars.com/sell-your-car-scrap-jeddah/",
-  },
+  // {
+  //   label: "ba3hacash.com",
+  //   href: "https://ba3hacash.com/",
+  // },
+  // {
+  //   label: "ahmed-alhawary.com",
+  //   href: "https://ahmed-alhawary.com/",
+  // },
+  // {
+  //   label: "alnada-cars.com",
+  //   href: "https://alnada-cars.com/sell-your-car-scrap-jeddah/",
+  // },
   {
     label: "haraj.com",
     href: "https://haraj.com.sa/users/%D8%AA%D8%B4%D9%84%D9%8A%D8%AD%20%D8%A7%D9%84%D9%86%D8%AF%D9%89%20%D9%84%D8%B9%D8%A7%D9%84%D9%85%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/",
@@ -41,8 +41,8 @@ const PHONE_TEL = "+966508374454";
 const PHONE_TEL2 = "+966563319110";
 const WHATSAPP_LINK = "https://wa.me/966508374454";
 const WHATSAPP_LINK2 = "https://wa.me/966563319110";
-const TIKTOK_LINK = "https://www.tiktok.com/@ahmdtop3";
-const FACEBOOK_LINK = "https://www.facebook.com/share/1Ez8SPcBxB/";
+// const TIKTOK_LINK = "https://www.tiktok.com/@ahmdtop3";
+// const FACEBOOK_LINK = "https://www.facebook.com/share/1Ez8SPcBxB/";
 
 // Minimal TikTok glyph
 function TikTokIcon({ size = 15, className = "" }) {
@@ -334,7 +334,7 @@ export default function Footer() {
             </div>
 
             {/* Social Media Area */}
-            <div className="mt-4 pt-4 border-t border-white/5 flex flex-col gap-3">
+            {/* <div className="mt-4 pt-4 border-t border-white/5 flex flex-col gap-3">
               <a
                 href={TIKTOK_LINK}
                 target="_blank"
@@ -360,7 +360,7 @@ export default function Footer() {
 
                 تابعنا على فيسبوك
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 
