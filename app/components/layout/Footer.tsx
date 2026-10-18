@@ -5,7 +5,6 @@ import {
   MessageCircle,
   ExternalLink,
   ArrowLeft,
-  Facebook,
 } from "lucide-react";
 
 const quickLinks = [
