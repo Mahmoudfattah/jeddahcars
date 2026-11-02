@@ -1,11 +1,3 @@
-// import Hero from "./components/sections/Hero";
-// import Brands from "./components/sections/Brands";
-// import About from "./components/sections/About";
-// import OurApproach from "./components/sections/OurApproach";
-// import ServicesGrid from "./components/sections/ServicesGrid";
-// import CitiesWeServe from "./components/sections/CitiesWeServe";
-// import Contact from "./components/sections/Contact";
-
 import Footer from "./components/layout/Footer";
 import AboutSection from "./components/sections/AboutSection";
 import FAQSection from "./components/sections/FAQSection";
@@ -14,68 +6,63 @@ import HowItWorksSection from "./components/sections/HowItWorksSection";
 import TrustIntroAndVideoSection from "./components/sections/TrustIntroAndVideoSection";
 import WorkGallerySection from "./components/sections/WorkGallerySection";
 
-
-
+const PHONE_DISPLAY = "0508374454";
+const PHONE_TEL = "+966508374454";
+const WHATSAPP_LINK = "https://wa.me/966508374454";
 
 export default function Home() {
-  const phoneNumber = "0562117196";
-  const internationalNumber = "971562117196"; // Update country code if needed (e.g., +971 for UAE)
-
   return (
     <>
-    <HeroSection/>
-    <AboutSection/>
-    <TrustIntroAndVideoSection/>
-    <WorkGallerySection/>
-    <FAQSection/>
-    <HowItWorksSection/>
+      <HeroSection />
+      <AboutSection />
+      <TrustIntroAndVideoSection />
+      <WorkGallerySection />
+      <FAQSection />
+      <HowItWorksSection />
 
-    <Footer/>
-    
-      {/* <Hero />
-      <Brands />
-      <About />
-      <OurApproach />
-      <ServicesGrid />
-      <CitiesWeServe />
-      <Contact /> */}
-      {/* <CarBrandsSection/> */}
+      <Footer />
 
-      {/* Left Bottom Corner - WhatsApp Button (Smaller Size) */}
-      {/* <div className="fixed bottom-4 right-2 z-50">
+      {/* Floating Contact Buttons */}
+
+      {/* Call Button - Bottom Left */}
+      <div className="fixed bottom-4 left-2 z-50">
         <a
-          href={`https://wa.me/${internationalNumber}`}
+          href={`tel:${PHONE_TEL}`}
+          aria-label={`Call us at ${PHONE_DISPLAY}`}
+          title="Call Us"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0284C7] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#0369A1] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0284C7] focus-visible:ring-offset-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            className="h-5 w-5 fill-current"
+            aria-hidden="true"
+          >
+            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.61 21.01 2.99 13.39 2.99 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.19 2.2z" />
+          </svg>
+        </a>
+      </div>
+
+      {/* WhatsApp Button - Bottom Right */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <a
+          href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
-          className="flex items-center justify-center w-11 h-11 bg-[#25D366] text-white rounded-full shadow-lg hover:bg-[#20ba59] hover:scale-105 transition-all duration-300"
+          aria-label="Chat with us on WhatsApp"
+          title="WhatsApp"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#20BA59] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5 fill-current"
             viewBox="0 0 24 24"
+            className="h-6 w-6 fill-current"
+            aria-hidden="true"
           >
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            <path d="M20.52 3.48A11.87 11.87 0 0012.05 0C5.48 0 .13 5.35.13 11.92c0 2.1.55 4.15 1.6 5.96L.04 24l6.28-1.65a11.9 11.9 0 005.72 1.46h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.45-8.41zM12.05 21.8h-.01a9.88 9.88 0 01-5.04-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.87 9.87 0 01-1.52-5.26c0-5.46 4.44-9.9 9.9-9.9a9.84 9.84 0 017 2.9 9.84 9.84 0 012.9 7c-.01 5.45-4.45 9.88-9.91 9.88zm5.43-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.34z" />
           </svg>
         </a>
-      </div> */}
-
-      {/* Right Bottom Corner - Call Button (Smaller Size) */}
-      {/* <div className="fixed bottom-4 left-2 z-50">
-        <a
-          href={`tel:${phoneNumber}`}
-          aria-label="Call Us"
-          className="flex items-center justify-center w-11 h-11 bg-[#0284C7] text-white rounded-full shadow-lg hover:bg-[#0369A1] hover:scale-105 transition-all duration-300"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5 fill-current"
-            viewBox="0 0 24 24"
-          >
-            <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.27.36-.66.25-1.01C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM5.03 5h1.5c.07.88.22 1.75.47 2.58l-1.06 1.06C5.45 7.63 5.16 6.34 5.03 5zm13.94 13.97c-1.34-.13-2.63-.42-3.84-1.06l1.06-1.06c.83.25 1.7.4 2.59.47v1.51z" />
-          </svg>
-        </a>
-      </div> */}
+      </div>
     </>
   );
 }

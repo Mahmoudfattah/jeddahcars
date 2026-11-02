@@ -18,15 +18,15 @@ export default function HeroSection() {
             </p>
 
             <h1 className="text-3xl font-extrabold leading-[1.2] text-[var(--foreground)] sm:text-4xl lg:text-5xl">
-              نشتري سيارات التشليح
+              شراء سيارات التشليح والمصدومة
               <br />
-              والمصدومة في جدة
+              وإسقاط اللوحات في جدة
             </h1>
 
             <p className="max-w-md text-base leading-relaxed text-[var(--foreground-secondary)]">
               نشتري جميع أنواع السيارات التشليح والتالفة والمتعطلة والسكراب
               والمصدومة في جدة، مع تقييم فوري، وسحب مجاني من أمام المنزل، وإتمام
-              إجراءات إسقاط اللوحات. كما نخدم مكة المكرمة والطائف.
+              إجراءات إسقاط اللوحات الفوري. كما نخدم مكة المكرمة والطائف.
             </p>
 
             {/* ========================================================
@@ -105,7 +105,7 @@ export default function HeroSection() {
             <div className="relative z-10 w-full max-w-md sm:max-w-lg lg:max-w-2xl">
               <Image
                 src="/heroImage.webp"
-                alt="سيارة سيدان مصدومة ومتضررة في جدة جاهزة للتقييم والبيع"
+                alt="سيارة سيدان مصدومة ومتضررة في جدة جاهزة للتقييم والبيع وإسقاط اللوحات"
                 width={900}
                 height={650}
                 sizes="(max-width: 640px) 90vw, (max-width: 1024px) 55vw, 45vw"
@@ -114,15 +114,7 @@ export default function HeroSection() {
               />
             </div>
 
-            {/* ======================================================
-                CONDITION CARD
-            ====================================================== */}
-            {/* ======================================================
-    STATUS CARD (Top Right)
-====================================================== */}
-            {/* ======================================================
-    CONDITION CARD (Top Right)
-====================================================== */}
+            {/* CONDITION CARD (Top Right) */}
             <div className="absolute z-20 flex flex-col items-center right-2 top-2 gap-1 sm:right-4 sm:top-6 sm:gap-1.5">
               <span className="font-semibold text-[var(--foreground-muted)] text-[10px] sm:text-[11px]">
                 الحالة
@@ -138,9 +130,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* ======================================================
-    SERVICE CARD (Middle Left)
-====================================================== */}
+            {/* SERVICE CARD (Middle Left) */}
             <div className="absolute z-20 flex flex-col items-center left-2 top-[10%] -translate-y-1/2 gap-1 sm:left-4 sm:top-32 sm:translate-y-0 sm:gap-1.5">
               <span className="font-semibold text-[var(--foreground-muted)] text-[10px] sm:text-[11px]">
                 الخدمة
@@ -149,16 +139,14 @@ export default function HeroSection() {
               <div className="flex items-center border border-[var(--border)] bg-[var(--surface)]/90 shadow-[var(--shadow-md)] backdrop-blur-sm max-w-[140px] gap-2 rounded-xl px-2.5 py-1.5 sm:max-w-[180px] sm:gap-2.5 sm:rounded-2xl sm:px-3.5 sm:py-2.5">
                 <div className="flex shrink-0 items-center justify-center rounded-full bg-[var(--brand-pale)] text-[var(--brand-light)] h-6 w-6 sm:h-8 sm:w-8">
                   <Truck className="w-[14px] h-[14px] sm:w-4 sm:h-4" />
-  </div>
+                </div>
                 <span className="font-medium text-[var(--foreground)] leading-tight text-[10px] sm:leading-snug sm:text-xs">
-                  سطحه مجانية من موقعك داخل جدة
+                  سطحة مجانية من موقعك داخل جدة
                 </span>
               </div>
             </div>
 
-            {/* ======================================================
-    INSTANT EVALUATION (Bottom Center)
-====================================================== */}
+            {/* INSTANT EVALUATION (Bottom Center) */}
             <div className="absolute z-20 left-1/2 -translate-x-1/2 bottom-3 sm:bottom-8 lg:left-auto lg:right-6 lg:translate-x-0">
               <div className="flex items-center border border-[var(--border)] bg-[var(--surface)]/90 shadow-[var(--shadow-md)] backdrop-blur-sm rounded-full gap-2 py-1.5 pl-3 pr-1.5 sm:gap-3 sm:py-2 sm:pl-4 sm:pr-2">
                 <div className="flex shrink-0 items-center justify-center rounded-full bg-[var(--brand-pale)] text-[var(--brand-light)] h-7 w-7 sm:h-9 sm:w-9">
@@ -172,9 +160,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* ============================================================
-            MOBILE CITIES
-        ============================================================ */}
+        {/* MOBILE CITIES */}
         <div className="mt-8 flex justify-center gap-5 text-sm text-[var(--foreground-muted)] lg:hidden">
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-[var(--brand-light)]" />
@@ -192,39 +178,6 @@ export default function HeroSection() {
           </span>
         </div>
       </div>
-
-      {/* LocalBusiness structured data — tells Google this is a local business,
-    its primary service area (Jeddah), and secondary coverage (Makkah, Taif).
-    This is what can trigger Google Maps / Local Pack visibility, and lets
-    Search show the phone number as a tappable call button in results. */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "شراء السيارات المصدومة والتشليح",
-            description:
-              "نشتري جميع أنواع السيارات التشليح والتالفة والمتعطلة والسكراب والمصدومة في جدة، مع تقييم فوري، وسحب مجاني من أمام المنزل، وإتمام إجراءات إسقاط اللوحات.",
-            telephone: "+966508374454",
-            areaServed: [
-              {
-                "@type": "City",
-                name: "جدة",
-              },
-              {
-                "@type": "City",
-                name: "مكة المكرمة",
-              },
-              {
-                "@type": "City",
-                name: "الطائف",
-              },
-            ],
-            // priceRange: "$$",
-          }),
-        }}
-      />
     </section>
   );
 }

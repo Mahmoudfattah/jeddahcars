@@ -44,6 +44,14 @@ export const metadata: Metadata = {
       "شراء سيارات مصدومة وتشليح وسكراب في جدة | إسقاط لوحات فوري — قيمها كار",
     description:
       "تقييم فوري وشراء جميع السيارات المصدومة والتالفة والتشليح في جدة نقداً مع سطحة مجانية وإسقاط لوحات فوري. تواصل معنا: 0508374454",
+    images: [
+      {
+        url: "https://qeemahcar.com/heroImage.webp",
+        width: 900,
+        height: 650,
+        alt: "قيمها كار لشراء السيارات المصدومة والتشليح في جدة",
+      },
+    ],
   },
 
   twitter: {
@@ -52,6 +60,7 @@ export const metadata: Metadata = {
       "شراء سيارات مصدومة وتشليح وسكراب في جدة | إسقاط لوحات فوري — قيمها كار",
     description:
       "شراء سيارات مصدومة وتشليح وتالفة في جدة بأعلى سعر كاش فوري مع سطحة مجانية وإسقاط لوحات — 0508374454",
+    images: ["https://qeemahcar.com/heroImage.webp"],
   },
 
   alternates: {
@@ -72,11 +81,16 @@ export default function RootLayout({
     "@type": "AutoDealer",
     name: "قيمها كار لشراء السيارات المصدومة والتشليح في جدة",
     url: "https://qeemahcar.com",
+    image: "https://qeemahcar.com/heroImage.webp",
     telephone: "+966508374454",
     description:
       "شراء جميع أنواع السيارات المصدومة والتشليح والتالفة والمتعطلة والسكراب في جدة مع تقييم فوري، سحب مجاني بسطحة خاصة، وإتمام إجراءات إسقاط اللوحات الفوري.",
     priceRange: "$$",
-    areaServed: [{ "@type": "City", name: "جدة" }],
+    areaServed: [
+      { "@type": "City", name: "جدة" },
+      { "@type": "City", name: "مكة المكرمة" },
+      { "@type": "City", name: "الطائف" },
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "جدة",
