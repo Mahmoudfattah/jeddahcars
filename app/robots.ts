@@ -5,7 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/*.woff2$"],
     },
-    sitemap: "https://qeemahcar.com/sitemap.xml",
+    sitemap: "https://qeemahcar.com/sitemap.xml", // في موقع بيعها كاش خليه ba3hacash.com
   };
 }
