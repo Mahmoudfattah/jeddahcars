@@ -1,34 +1,26 @@
 "use client";
 
-import {
-  ShieldCheck,
-  ArrowLeft,
-  PlayCircle,
-} from "lucide-react";
+import { ShieldCheck, ArrowLeft, PlayCircle } from "lucide-react";
 
 export default function TrustIntroAndVideoSection() {
   const videoSchema = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
 
-    name: "كيف نشتري السيارات المصدومة والتالفة في جدة؟",
+    name: "كيف نشتري السيارات المصدومة والتالفة والتشليح في جدة؟ — قيّمها كار",
 
     description:
-      "تعرف على خطوات بيع السيارات المصدومة والتالفة وسيارات التشليح في جدة، بداية من تقييم السيارة والتسعير العادل وحتى السحب المجاني وإنهاء إجراءات نقل الملكية وإسقاط اللوحات. نخدم أيضًا مكة المكرمة والطائف.",
+      "تعرف على خطوات بيع السيارات المصدومة والتالفة وسيارات التشليح في جدة عبر قيّمها كار، بداية من التقييم الفوري والتسعير العادل وحتى السحب المجاني بالسطحة وإنهاء إجراءات نقل الملكية وإسقاط اللوحات الفوري في جدة ومكة والطائف.",
 
-    thumbnailUrl: [
-      "https://YOUR-DOMAIN.com/video-poster.jpg",
-    ],
+    thumbnailUrl: ["https://qeemahcar.com/cover.webp"],
 
-    uploadDate: "2026-08-21",
+    uploadDate: "2026-08-21T12:00:00+03:00",
 
     duration: "PT35S",
 
-    contentUrl:
-      "https://YOUR-DOMAIN.com/video-optimized.mp4",
+    contentUrl: "https://qeemahcar.com/video-optimized.mp4",
 
-    embedUrl:
-      "https://YOUR-DOMAIN.com/jeddah#video",
+    embedUrl: "https://qeemahcar.com/#video",
 
     inLanguage: "ar-SA",
 
@@ -36,8 +28,8 @@ export default function TrustIntroAndVideoSection() {
 
     publisher: {
       "@type": "Organization",
-      name: "شراء السيارات المصدومة",
-      url: "https://YOUR-DOMAIN.com",
+      name: "قيّمها كار لشراء السيارات المصدومة والتشليح في جدة",
+      url: "https://qeemahcar.com",
     },
   };
 
@@ -86,22 +78,22 @@ export default function TrustIntroAndVideoSection() {
 
               {/* Intro paragraph */}
               <p className="max-w-2xl text-base leading-relaxed text-[var(--foreground-secondary)] sm:text-lg">
-                نشتري السيارات المصدومة والتالفة وسيارات التشليح في جدة،
-                مع تقييم عادل وشفاف للسيارة وتقديم سعر مناسب لحالتها.
+                نشتري السيارات المصدومة والتالفة وسيارات التشليح في جدة، مع
+                تقييم عادل وشفاف للسيارة وتقديم سعر مناسب لحالتها.
               </p>
 
               {/* Process paragraph */}
               <p className="max-w-2xl text-base leading-relaxed text-[var(--foreground-secondary)] sm:text-lg">
-                نوفر لك السحب المجاني بالسطحة، ونتولى الإجراءات النظامية
-                من نقل الملكية إلى إسقاط اللوحات، لتتم عملية البيع بسهولة
+                نوفر لك السحب المجاني بالسطحة، ونتولى الإجراءات النظامية من نقل
+                الملكية إلى إسقاط اللوحات الفوري في جدة، لتتم عملية البيع بسهولة
                 وبدون رسوم مخفية. نخدم أيضًا مكة المكرمة والطائف.
               </p>
 
               {/* CTA */}
               <div className="pt-2">
                 <a
-                  href="/about"
-                  aria-label="تعرف على خطوات شراء السيارات المصدومة والتالفة"
+                  href="#about"
+                  aria-label="تعرف على خطوات شراء السيارات المصدومة والتالفة في جدة"
                   className="group flex w-fit items-center gap-4 rounded-full bg-white py-1.5 pl-1.5 pr-6 font-semibold text-black shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-gray-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[var(--brand)] focus:ring-offset-2 focus:ring-offset-background"
                 >
                   <span className="text-sm text-blue-950">
@@ -133,13 +125,9 @@ export default function TrustIntroAndVideoSection() {
                   preload="metadata"
                   poster="/cover.webp"
                   playsInline
-                  aria-label="فيديو يوضح خطوات شراء السيارات المصدومة والتالفة في جدة"
+                  aria-label="فيديو يوضح خطوات شراء السيارات المصدومة والتالفة وإسقاط اللوحات في جدة"
                 >
-                  <source
-                    src="/video-optimized.mp4"
-                    type="video/mp4"
-                  />
-
+                  <source src="/video-optimized.mp4" type="video/mp4" />
                   <track
                     kind="captions"
                     src="/captions/car-buying-process-ar.vtt"
@@ -147,7 +135,6 @@ export default function TrustIntroAndVideoSection() {
                     label="العربية"
                     default
                   />
-
                   متصفحك لا يدعم تشغيل الفيديو.
                   <a
                     href="/video-optimized.mp4"

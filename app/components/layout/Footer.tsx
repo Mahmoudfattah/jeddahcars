@@ -371,14 +371,14 @@ export default function Footer() {
           </p>
 
           <a
-            href="https://www.tiktok.com/@dev_flow"
+            href="https://www.tiktok.com/@mahmoudfattah.dev"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-white transition-colors"
           >
             صُنع بحب بواسطة{" "}
             <span className="font-bold text-[#38bdf8] drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]">
-              DevFlow
+              mahmoudfattah.dev
             </span>
           </a>
         </div>
