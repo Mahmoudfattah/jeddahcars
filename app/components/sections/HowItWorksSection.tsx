@@ -4,41 +4,41 @@ const steps = [
   {
     number: "01",
     icon: MessageCircle,
-    title: "أرسل صور سيارتك",
+    title: "أرسل صور وموديل سيارتك",
     description:
-      "صوّر سيارتك من زوايا مختلفة وأرسلها عبر واتساب مع الموديل والحالة.",
+      "صوّر سيارتك المصدومة أو التالفة وأرسلها عبر واتساب (0508374454) مع تحديد الموديل وموقعك في جدة أو مكة أو الطائف.",
   },
   {
     number: "02",
     icon: BadgeCheck,
-    title: "استلم السعر خلال دقائق",
+    title: "استلم أعلى تسعير فوري خلال دقائق",
     description:
-      "نراجع الصور ونعطيك سعرًا واضحًا مباشرة، بدون تفاوض معقد أو انتظار طويل.",
+      "نراجع حالة السيارة ونقدم لك عرض سعر كاش فوري وعادل مباشرة، بدون تفاوض معقد أو انتظار طويل.",
   },
   {
     number: "03",
     icon: Truck,
-    title: "السطحة تصلك وتنتهي الأوراق",
+    title: "سطحة مجانية وإسقاط فوري للوحات",
     description:
-      "بعد الاتفاق، نرسل سطحة مجانية لموقعك وننهي إسقاط اللوحة ونقل الملكية.",
+      "نرسل سطحة خاصة مجانية لموقعك في جدة ونسلمك المبلغ فوراً مع إنهاء إجراءات إسقاط المركبات ونقل الملكية.",
   },
 ];
 
 export default function HowItWorksSection() {
   return (
     <section
-      className="relative overflow-hidden bg-background py-4"
+      className="relative overflow-hidden bg-background py-8 sm:py-12"
       dir="rtl"
     >
       <div className="container-custom relative z-10 px-4 sm:px-6">
         {/* Header */}
         <div className="mx-auto mb-14 flex max-w-2xl flex-col items-center gap-4 text-center">
           <span className="text-sm font-semibold text-[var(--brand-light)]">
-            كيف تبيع سيارتك
+            خطوات بيع سيارتك في جدة — قيّمها كار
           </span>
 
           <h2 className="text-3xl font-extrabold leading-[1.3] text-[var(--foreground)] sm:text-4xl">
-            ثلاث خطوات بسيطة، من التواصل إلى استلام المبلغ
+            ثلاث خطوات بسيطة، من التواصل إلى استلام الكاش وإسقاط اللوحات
           </h2>
         </div>
 
@@ -75,7 +75,7 @@ export default function HowItWorksSection() {
                   {step.title}
                 </h3>
 
-                <p className="max-w-[240px] text-sm leading-relaxed text-[var(--foreground-secondary)]">
+                <p className="max-w-[260px] text-sm leading-relaxed text-[var(--foreground-secondary)]">
                   {step.description}
                 </p>
               </div>
@@ -89,11 +89,11 @@ export default function HowItWorksSection() {
             href="https://wa.me/966508374454"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="ابدأ الآن على واتساب"
+            aria-label="ابدأ الآن على واتساب لتقييم سيارتك في جدة"
             className="flex w-fit items-center gap-4 rounded-full bg-white py-1.5 pl-1.5 pr-6 font-semibold !text-black transition duration-300 hover:-translate-y-1 hover:bg-gray-200"
           >
             <span className="text-sm text-blue-950">
-              ابدأ الآن على واتساب
+              ابدأ تقييم سيارتك الآن على واتساب
             </span>
 
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">

@@ -4,12 +4,12 @@ const gallery = [
   {
     id: "tow-truck",
     src: "/سطحة-نقل-سيارة-مصدومة-جدة.webp",
-    alt: "شراء السيارات المصدومة في جدة مع سحب مجاني بالسطحة وإنهاء إجراءات الإسقاط",
-    title: "شراء السيارات المصدومة في جدة",
+    alt: "شراء السيارات المصدومة في جدة مع سحب مجاني بالسطحة وإسقاط مركبات فوري بجدة",
+    title: "شراء السيارات المصدومة وإسقاط اللوحات في جدة",
     tags: [
-      "سحب مجاني للسيارة المصدومة من موقعك",
-      "إنهاء إجراءات الإسقاط ونقل الملكية",
-      "تقييم السيارة ودفع السعر بشكل فوري",
+      "سحب مجاني للسيارة المصدومة بسطحة خاصة من موقعك بجدة",
+      "إنهاء إجراءات إسقاط المركبات واللوحات الفوري ونقل الملكية",
+      "تقييم فوري للسيارة ودفع المبلغ كاش في نفس اليوم",
     ],
     size: "lg",
   },
@@ -17,58 +17,92 @@ const gallery = [
     id: "side-damage",
     src: "/سيارة-مصدومة-من-الجانب-جدة.webp",
     alt: "شراء سيارة مصدومة من الجانب في جدة وتقييم أضرار الحوادث بأفضل سعر",
-    title: "شراء السيارات المتضررة والغارقة  ",
+    title: "شراء السيارات المتضررة والغارقة في جدة",
     size: "sm",
   },
   {
     id: "front-damage-sunset",
     src: "/سيارة-مصدومة-من-الامام.webp",
     alt: "شراء سيارة مصدومة من الأمام في جدة مهما كان حجم الضرر أو حالة السيارة",
-    title: "شراء السيارات المصدومة والسكراب    ",
+    title: "شراء السيارات المصدومة والسكراب بجدة",
     size: "sm",
   },
   {
     id: "rear-damage",
     src: "/سيارة-مصدومة-من-الخلف.webp",
-    alt: "شراء السيارات المصدومة من الخلف في جدة مع تقييم السيارة ونقل الملكية",
-    title: "  شراء السيارات المحروقه والمصدومة ",
+    alt: "شراء سيارة مصدومة من الخلف في جدة مع تقييم فوري ونقل الملكية وإسقاط اللوحات",
+    title: "شراء سيارات مصدومة من الخلف والأمام ومحروقة",
     size: "sm",
   },
   {
     id: "heavy-front-damage",
     src: "/سيارة-تالفة-ضرر-كبير-امامي.webp",
-    alt: "شراء السيارات التالفة والمصدومة بالكامل في جدة بأفضل سعر بعد التقييم",
-    title: "شراء سيارات التشليح والتالفة ",
+    alt: "شراء السيارات التالفة والمصدومة بالكامل تشليح في جدة بأفضل سعر كاش",
+    title: "شراء سيارات التشليح والتالفة في جدة",
     size: "sm",
   },
 ];
 
 export default function WorkGallerySection() {
+  const gallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "شراء سيارات مصدومة وتشليح وإسقاط مركبات فوري بجدة",
+    provider: {
+      "@type": "AutoDealer",
+      name: "قيّمها كار لشراء السيارات المصدومة والتشليح في جدة",
+      url: "https://qeemahcar.com",
+      telephone: "+966508374454",
+    },
+    areaServed: [
+      { "@type": "City", name: "جدة" },
+      { "@type": "City", name: "مكة المكرمة" },
+      { "@type": "City", name: "الطائف" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "خدمات شراء السيارات المصدومة والتشليح في جدة",
+      itemListElement: gallery.map((item) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: item.title.trim(),
+          description: item.alt,
+        },
+      })),
+    },
+  };
+
   return (
     <section
-      className="bg-background py-4 font-sans"
+      className="bg-background py-8 font-sans"
       aria-labelledby="gallery-title"
       id="cars"
       dir="rtl"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(gallerySchema) }}
+      />
+
       <div className="mx-auto max-w-[1200px] px-4 sm:px-5 md:px-6">
         {/* SECTION HEADER */}
         <div className="mx-auto mb-8 flex max-w-3xl flex-col items-center gap-3 text-center sm:mb-10 sm:gap-4 md:mb-12">
           <span className="text-xs font-semibold text-[var(--brand-light)] sm:text-sm">
-            شراء السيارات المصدومة في جدة
+            قيّمها كار — شراء السيارات المصدومة والتشليح في جدة
           </span>
 
           <h2
             id="gallery-title"
             className="px-2 text-2xl font-extrabold leading-[1.35] text-[var(--foreground)] sm:text-3xl md:text-4xl"
           >
-            سيارات مصدومة وتالفة اشتريناها في جدة
+            سيارات مصدومة وتالفة وتشليح اشتريناها في جدة
           </h2>
 
           <p className="max-w-2xl px-1 text-sm leading-7 text-[var(--foreground-secondary)] sm:text-base sm:leading-relaxed md:text-lg">
-            نماذج حقيقية لسيارات مصدومة وتالفة قمنا بتقييمها وشرائها في جدة،
-            مهما كان نوع الضرر، مع سحب مجاني وإنهاء إجراءات الإسقاط ونقل
-            الملكية.
+            نماذج حقيقية لسيارات مصدومة (من الأمام أو الخلف أو الجانب) وسيارات
+            تالفة وتشليح قمنا بتقييمها وشرائها في أحياء جدة، مع سحب مجاني
+            بالسطحة وإنهاء إجراءات إسقاط المركبات الفوري ونقل الملكية.
           </p>
         </div>
 
@@ -117,7 +151,7 @@ export default function WorkGallerySection() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
 
-                <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
+                <div className="absolute inset-0 bg-black/45 transition-colors duration-300 group-hover:bg-black/55" />
 
                 <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-5">
                   <h3
@@ -138,7 +172,7 @@ export default function WorkGallerySection() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
 
-                <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
+                <div className="absolute inset-0 bg-black/45 transition-colors duration-300 group-hover:bg-black/55" />
 
                 <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-5">
                   <h3
@@ -163,7 +197,7 @@ export default function WorkGallerySection() {
                 sizes="(max-width: 1024px) 100vw, 35vw"
               />
 
-              <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
+              <div className="absolute inset-0 bg-black/45 transition-colors duration-300 group-hover:bg-black/55" />
 
               <div className="absolute inset-0 flex items-center justify-center p-5">
                 <h3
@@ -184,7 +218,7 @@ export default function WorkGallerySection() {
                 sizes="(max-width: 1024px) 100vw, 35vw"
               />
 
-              <div className="absolute inset-0 bg-black/40 transition-colors duration-300 group-hover:bg-black/50" />
+              <div className="absolute inset-0 bg-black/45 transition-colors duration-300 group-hover:bg-black/55" />
 
               <div className="absolute inset-0 flex items-center justify-center p-5">
                 <h3
@@ -203,31 +237,31 @@ export default function WorkGallerySection() {
               rel="noopener noreferrer"
               aria-label="تواصل معنا على واتساب لتقييم وشراء سيارتك المصدومة في جدة"
               className="
-              flex
-              min-h-[60px]
-              w-full
-              touch-manipulation
-              items-center
-              justify-center
-              rounded-[10px]
-              bg-[var(--cta)]
-              px-5
-              py-3
-              text-center
-              shadow-[var(--shadow-brand)]
-              transition-all
-              duration-300
-              hover:-translate-y-0.5
-              hover:bg-[var(--cta-hover)]
-              hover:shadow-[0_8px_30px_rgba(15,133,250,0.45)]
-              active:translate-y-0
-              active:bg-[var(--cta-active)]
-              sm:min-h-[65px]
-            "
+                flex
+                min-h-[60px]
+                w-full
+                touch-manipulation
+                items-center
+                justify-center
+                rounded-[10px]
+                bg-[var(--cta)]
+                px-5
+                py-3
+                text-center
+                shadow-[var(--shadow-brand)]
+                transition-all
+                duration-300
+                hover:-translate-y-0.5
+                hover:bg-[var(--cta-hover)]
+                hover:shadow-[0_8px_30px_rgba(15,133,250,0.45)]
+                active:translate-y-0
+                active:bg-[var(--cta-active)]
+                sm:min-h-[65px]
+              "
               dir="rtl"
             >
               <span className="text-sm font-semibold leading-6 text-[var(--cta-text)] sm:text-base md:text-lg">
-                تواصل معنا لتقييم وشراء سيارتك
+                تواصل معنا لتقييم وشراء سيارتك في جدة
               </span>
             </a>
           </div>
