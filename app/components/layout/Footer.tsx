@@ -7,7 +7,7 @@ const quickLinks = [
   { label: "كيف تعمل الخدمة", href: "#how-it-works" },
   { label: "سيارات مصدومة وتشليح", href: "#cars" },
   { label: "الأسئلة الشائعة", href: "#faq" },
-  { label: "المدونة", href: "https://sikrabsa.com/blog" },
+  // { label: "المدونة", href: "https://sikrabsa.com/blog" },
 ];
 
 const otherSites = [
