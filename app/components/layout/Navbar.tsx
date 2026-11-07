@@ -8,7 +8,8 @@ import { Menu, X } from "lucide-react";
 const NAV_LINKS = [
   { label: "من نحن", href: "#about" },
   { label: "كيف تعمل الخدمة", href: "#how-it-works" },
-  { label: "سيارات مصدومة", href: "#cars" },
+  { label: "سيارات مصدومة وتشليح", href: "#cars" },
+  { label: "الأسئلة الشائعة", href: "#faq" },
 ];
 
 const NAV_OFFSET = 90;
@@ -27,7 +28,8 @@ export default function Navbar() {
     const section = document.getElementById(id);
     if (!section) return;
 
-    const top = section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+    const top =
+      section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
 
     window.scrollTo({
       top,
@@ -66,7 +68,8 @@ export default function Navbar() {
         } else if (window.scrollY < 120) {
           setActiveHash("");
           if (window.location.hash) {
-            const cleanUrl = `${window.location.pathname}` + `${window.location.search}`;
+            const cleanUrl =
+              `${window.location.pathname}` + `${window.location.search}`;
             window.history.replaceState(null, "", cleanUrl);
           }
         }
@@ -93,7 +96,8 @@ export default function Navbar() {
       if (window.scrollY < 120) {
         setActiveHash("");
         if (window.location.hash) {
-          const cleanUrl = `${window.location.pathname}` + `${window.location.search}`;
+          const cleanUrl =
+            `${window.location.pathname}` + `${window.location.search}`;
           window.history.replaceState(null, "", cleanUrl);
         }
       }
@@ -144,16 +148,11 @@ export default function Navbar() {
       return;
     }
 
-    // 1. Calculate the exact width of the scrollbar
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-
-    // 2. Lock the scroll
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = "hidden";
-
-    // 3. Add right padding to compensate for the missing scrollbar
     document.body.style.paddingRight = `${scrollbarWidth}px`;
 
-    // Cleanup function when the menu closes
     return () => {
       document.body.style.overflow = "";
       document.body.style.paddingRight = "";
@@ -183,7 +182,8 @@ export default function Navbar() {
     const section = document.getElementById("contact");
     if (!section) return;
 
-    const top = section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+    const top =
+      section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
     window.scrollTo({
       top,
       behavior: "smooth",
@@ -230,11 +230,12 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={goHome}
+                aria-label="قيّمها كار - الصفحة الرئيسية"
                 className="
                   group
                   flex
                   items-center
-                  gap-1
+                  gap-1.5
                   rounded-full
                   px-3
                   py-1
@@ -252,25 +253,23 @@ export default function Navbar() {
                     items-center
                     justify-center
                     rounded-full
-                  
-               
                     transition-transform
                     duration-300
                     group-hover:scale-105
                   "
                 >
-                <Image
+                  <Image
                     src="/logonav.webp"
-                    alt="شراء السيارات المصدومة"
+                    alt="قيّمها كار - شراء سيارات التشليح والمصدومة وإسقاط اللوحات في جدة"
                     width={48}
                     height={48}
                     priority
-                    className="object-contain "
+                    className="object-contain"
                   />
                 </div>
 
-                <span className="  whitespace-nowrap text-base font-bold text-[var(--foreground)]">
-                  شراء السيارات المصدومة
+                <span className="whitespace-nowrap text-base font-bold text-[var(--foreground)]">
+                  قيّمها كار — شراء السيارات المصدومة
                 </span>
               </Link>
             </div>
@@ -279,6 +278,7 @@ export default function Navbar() {
                 DESKTOP APPLE GLASS NAV
             ================================================= */}
             <nav
+              aria-label="التنقل الرئيسي"
               className="
                 relative
                 flex
@@ -324,9 +324,11 @@ export default function Navbar() {
                       relative
                       z-10
                       rounded-full
-                      px-5
+                      px-4
+                      lg:px-5
                       py-2.5
-                      text-[15px]
+                      text-[14px]
+                      lg:text-[15px]
                       font-medium
                       transition-all
                       duration-300
@@ -452,7 +454,7 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={goHome}
-                aria-label="الرئيسية"
+                aria-label="قيّمها كار - الصفحة الرئيسية"
                 className="
                   flex
                   h-12
@@ -472,7 +474,7 @@ export default function Navbar() {
               >
                 <Image
                   src="/logonav.webp"
-                  alt="شراء السيارات المصدومة"
+                  alt="قيّمها كار - شراء السيارات المصدومة والتشليح في جدة"
                   width={30}
                   height={30}
                   priority
@@ -590,7 +592,7 @@ export default function Navbar() {
             "
           >
             <span className="text-[13px] font-bold text-slate-500">
-              القائمة الرئيسية
+              القائمة الرئيسية — قيّمها كار
             </span>
 
             <span
@@ -604,7 +606,7 @@ export default function Navbar() {
           </div>
 
           {/* NAV LINKS */}
-          <nav className="p-3">
+          <nav aria-label="قائمة الموبايل" className="p-3">
             {NAV_LINKS.map((link) => {
               const isActive = activeHash === link.href;
 
@@ -656,9 +658,7 @@ export default function Navbar() {
                     `}
                   />
 
-                  <span className="w-full pr-4">
-                    {link.label.trim()}
-                  </span>
+                  <span className="w-full pr-4">{link.label.trim()}</span>
                 </Link>
               );
             })}
