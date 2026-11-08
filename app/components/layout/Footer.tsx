@@ -249,7 +249,7 @@ export default function Footer() {
           >
             صُنع بحب بواسطة{" "}
             <span className="font-bold text-[#38bdf8] drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]">
-              mahmoudfattah.dev
+              Mahmoud Fattah | Developer
             </span>
           </a>
         </div>
