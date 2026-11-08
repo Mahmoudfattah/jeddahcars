@@ -7,6 +7,7 @@ const quickLinks = [
   { label: "كيف تعمل الخدمة", href: "#how-it-works" },
   { label: "سيارات مصدومة وتشليح", href: "#cars" },
   { label: "الأسئلة الشائعة", href: "#faq" },
+  { label: "إسقاط مركبات فوري بجدة", href: "/isqat-markabat-jeddah" },
   // { label: "المدونة", href: "https://sikrabsa.com/blog" },
 ];
 
