@@ -8,6 +8,7 @@ const quickLinks = [
   { label: "سيارات مصدومة وتشليح", href: "#cars" },
   { label: "الأسئلة الشائعة", href: "#faq" },
   { label: "إسقاط مركبات فوري بجدة", href: "/isqat-markabat-jeddah" },
+  { label: "شراء سيارات تشليح ومصدومة بجدة", href: "/tashleeh-jeddah" },
   // { label: "المدونة", href: "https://sikrabsa.com/blog" },
 ];
 
