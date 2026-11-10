@@ -180,7 +180,7 @@ export default function DamagedCarsJeddahPage() {
             </Link>
             <span>/</span>
             <span className="text-[#38bdf8] font-semibold">
-              شراء سيارات متعطلة وبدون استمارة في جدة
+              شراء سيارات متعطلة في جدة
             </span>
           </nav>
         </div>
@@ -194,7 +194,7 @@ export default function DamagedCarsJeddahPage() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.25] tracking-tight text-white max-w-4xl">
-              شراء سيارات متعطلة وبدون استمارة في جدة{" "}
+              شراء سيارات متعطلة في جدة{" "}
               <span className="text-[#38bdf8]">
                 (عطل مكينة أو قير، قديمة، ومتوقفة) كاش فوري
               </span>
