@@ -15,10 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/isqat-markabat-jeddah`,
       lastModified,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/tashleeh-jeddah`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/damaged-cars-jeddah`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
