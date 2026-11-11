@@ -10,6 +10,10 @@ const quickLinks = [
   { label: "إسقاط مركبات فوري بجدة", href: "/isqat-markabat-jeddah" },
   { label: "شراء سيارات تشليح ومصدومة بجدة", href: "/tashleeh-jeddah" },
   { label: "شراء سيارات متعطلة وبدون استمارة", href: "/damaged-cars-jeddah" },
+  {
+    label: "تقييم وتثمين السيارات المصدومة بجدة",
+    href: "/car-valuation-jeddah",
+  },
   // { label: "المدونة", href: "https://sikrabsa.com/blog" },
 ];
 

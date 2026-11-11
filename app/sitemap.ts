@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/isqat-markabat-jeddah`,
       lastModified,
       changeFrequency: "weekly",
-      priority: 0.95,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/tashleeh-jeddah`,
@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/damaged-cars-jeddah`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/car-valuation-jeddah`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
