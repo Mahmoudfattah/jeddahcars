@@ -325,7 +325,7 @@ export default function CarValuationJeddahPage() {
                   href="/damaged-cars-jeddah"
                   className="rounded-xl bg-[#38bdf8]/15 border border-[#38bdf8]/40 px-5 py-2.5 text-sm font-bold text-[#38bdf8] hover:bg-[#38bdf8] hover:text-slate-950 transition-all"
                 >
-                  شراء سيارات متعطلة وبدون استمارة
+                  شراء سيارات متعطلة  
                 </Link>
                 <Link
                   href="/"

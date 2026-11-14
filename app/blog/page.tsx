@@ -291,7 +291,7 @@ export default function QeemahCarBlogPage() {
                   href="/damaged-cars-jeddah"
                   className="rounded-xl bg-white/5 hover:bg-[#38bdf8]/15 border border-white/10 hover:border-[#38bdf8]/40 px-4 py-2.5 text-xs sm:text-sm font-bold text-slate-200 hover:text-[#38bdf8] transition-all"
                 >
-                  شراء سيارات متعطلة وبدون استمارة
+                  شراء سيارات متعطلة  
                 </Link>
                 <Link
                   href="/car-valuation-jeddah"
