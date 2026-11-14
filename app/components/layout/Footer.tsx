@@ -3,17 +3,17 @@
 import { Phone, MessageCircle, ExternalLink, ArrowLeft } from "lucide-react";
 
 const quickLinks = [
+
+  
+  
+  
   { label: "من نحن", href: "#about" },
-  { label: "كيف تعمل الخدمة", href: "#how-it-works" },
-  { label: "سيارات مصدومة وتشليح", href: "#cars" },
   { label: "الأسئلة الشائعة", href: "#faq" },
   { label: "إسقاط مركبات فوري بجدة", href: "/isqat-markabat-jeddah" },
   { label: "شراء سيارات تشليح ومصدومة بجدة", href: "/tashleeh-jeddah" },
-  { label: "شراء سيارات متعطلة", href: "/damaged-cars-jeddah" },
-  {
-    label: "تقييم وتثمين السيارات المصدومة بجدة",
-    href: "/car-valuation-jeddah",
-  },
+  { label: "شراء سيارات متعطلة  ", href: "/damaged-cars-jeddah" },
+  { label: "تقييم وتثمين السيارات المصدومة", href: "/car-valuation-jeddah" },
+  { label: "المدونة ودليل إسقاط المركبات", href: "/blog" },
   // { label: "المدونة", href: "https://sikrabsa.com/blog" },
 ];
 
