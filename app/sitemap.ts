@@ -36,6 +36,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/rear-front-damaged-cars`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    // {
+    //   url: `${baseUrl}/scrap-car-brands-jeddah`,
+    //   lastModified,
+    //   changeFrequency: "weekly",
+    //   priority: 0.85,
+    // },
+    {
       url: `${baseUrl}/blog`,
       lastModified,
       changeFrequency: "weekly",
