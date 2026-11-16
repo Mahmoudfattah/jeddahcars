@@ -125,7 +125,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" className={ibmPlexArabic.variable}>
       <body
         suppressHydrationWarning
-        className="bg-background text-[var(--foreground)] antialiased font-arabic"
+        className="bg-background text-[var(--foreground)] antialiased font-arabic pb-14 md:pb-0"
       >
         <script
           type="application/ld+json"
@@ -174,7 +174,7 @@ export default function RootLayout({
 
         <Navbar />
         <main>{children}</main>
-        <StickyMobileBar/>
+        <StickyMobileBar />
       </body>
     </html>
   );
