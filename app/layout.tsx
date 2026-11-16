@@ -3,6 +3,7 @@ import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navbar from "./components/layout/Navbar";
+import StickyMobileBar from "./components/layout/StickyMobileBar";
 
 /* Primary website font — optimized for Arabic readability */
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
@@ -173,6 +174,7 @@ export default function RootLayout({
 
         <Navbar />
         <main>{children}</main>
+        <StickyMobileBar/>
       </body>
     </html>
   );
