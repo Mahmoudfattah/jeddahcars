@@ -1,67 +1,262 @@
+"use client";
+
 import Image from "next/image";
-import { Truck, ShieldCheck, Clock3, ArrowLeft, Phone } from "lucide-react";
+import {
+  Truck,
+  ShieldCheck,
+  Clock3,
+  ArrowLeft,
+  Phone,
+  MessageCircle,
+  MapPin,
+  Clock,
+  Car,
+  Check,
+  FileCheck2,
+  Banknote,
+} from "lucide-react";
+import { useState } from "react";
+
+const WHATSAPP_NUMBER = "966508374454";
+
+const SERVICES = [
+  {
+    value: "تثمين وبيع سيارة مصدومة بجدة",
+    label: "بيع سيارة مصدومة / تالفة",
+    sub: "شراء نقدي وسحب مجاني",
+    icon: Banknote,
+  },
+  {
+    value: "إسقاط مركبة ولوحات فوري عبر أبشر",
+    label: "إسقاط مركبة ولوحات",
+    sub: "إسقاط فوري معتمد بأبشر",
+    icon: FileCheck2,
+  },
+];
 
 export default function HeroSection() {
+  const [carModel, setCarModel] = useState("");
+  const [serviceType, setServiceType] = useState(SERVICES[0].value);
+  const [phone, setPhone] = useState("");
+  const [validReg, setValidReg] = useState(true);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validReg) return;
+
+    if (
+      typeof window !== "undefined" &&
+      typeof (window as unknown as { gtag?: (...args: unknown[]) => void })
+        .gtag === "function"
+    ) {
+      (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
+        "event",
+        "whatsapp_form_submit",
+        {
+          event_category: "Lead",
+          event_label: `hero_form_jeddah_${serviceType}`,
+        },
+      );
+    }
+
+    const msg =
+      `السلام عليكم، أرغب في خدمة (${serviceType}) في جدة:\n` +
+      `- نوع السيارة والموديل: ${carModel}\n` +
+      `- رقم الجوال: ${phone}\n` +
+      `- الإقرار النظامي: الاستمارة سارية لإتمام الإجراء النظامي عبر أبشر.`;
+
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  };
+
   return (
     <section
-      className="relative overflow-hidden bg-background py-18 text-foreground sm:py-20"
+      className="relative overflow-hidden bg-background py-16 text-foreground sm:py-20"
       dir="rtl"
     >
       <div className="container-custom relative z-10 px-4 sm:px-6">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-6">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
           {/* ========================================================
-              TEXT COLUMN
+              TEXT COLUMN + QUICK FORM
           ======================================================== */}
-          <div className="order-2 flex flex-col gap-3 sm:gap-6 lg:order-1 lg:col-span-5">
-            <p className="text-sm font-semibold text-[var(--brand-light)] ">
-              تشليح · تالفة · متعطلة · سكراب · مصدومة — جدة
-            </p>
+          <div className="order-2 flex flex-col gap-6 lg:order-1 lg:col-span-6">
+            <div className="flex flex-col gap-3">
+              <p className="text-sm font-semibold text-[var(--brand-light)]">
+                تشليح · تالفة · متعطلة · سكراب · مصدومة — جدة
+              </p>
 
-            <h1 className="text-3xl font-extrabold leading-[1.2] text-[var(--foreground)] sm:text-4xl lg:text-5xl">
-              شراء سيارات التشليح والمصدومة
-              <br />
-              وإسقاط اللوحات في جدة
-            </h1>
+              <h1 className="text-3xl font-extrabold leading-[1.2] text-[var(--foreground)] sm:text-4xl lg:text-[42px]">
+                شراء سيارات التشليح والمصدومة
+                <br />
+                وإسقاط اللوحات في جدة
+              </h1>
 
-            <p className="max-w-md text-base leading-relaxed text-[var(--foreground-secondary)]">
-              نشتري جميع أنواع السيارات التشليح والتالفة والمتعطلة والسكراب
-              والمصدومة في جدة، مع تقييم فوري، وسحب مجاني من أمام المنزل، وإتمام
-              إجراءات إسقاط اللوحات الفوري. كما نخدم مكة المكرمة والطائف.
-            </p>
+              <p className="max-w-xl text-base leading-relaxed text-[var(--foreground-secondary)]">
+                نشتري جميع أنواع السيارات التشليح والتالفة والمتعطلة والسكراب
+                والمصدومة في جدة، مع تقييم فوري، وسحب مجاني من أمام المنزل،
+                وإتمام إجراءات إسقاط اللوحات الفوري. كما نخدم مكة المكرمة
+                والطائف.
+              </p>
+            </div>
 
             {/* ========================================================
-                CONTACT CTA
+                EMBEDDED HERO QUICK FORM (تصميم داكن واحترافي)
             ======================================================== */}
-            <div className="flex flex-wrap items-center gap-2">
-              {/* WhatsApp Button */}
-              <a
-                href="https://wa.me/966508374454"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="راسلنا على واتساب الآن"
-                className="mt-4 flex w-fit items-center gap-4 rounded-full bg-white py-1.5 pl-1.5 pr-6 font-semibold text-black transition duration-300 hover:-translate-y-1 hover:bg-gray-200"
-              >
-                <span className="text-sm text-blue-950">
-                  راسلنا على واتساب الآن
-                </span>
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#111927]/95 p-5 sm:p-6 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+              {/* إضاءة خلفية خفيفة متناغمة */}
+              <div className="pointer-events-none absolute -top-20 -left-20 h-44 w-44 rounded-full bg-[#38bdf8]/10 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-20 -right-20 h-44 w-44 rounded-full bg-emerald-500/10 blur-3xl" />
 
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
-                  <ArrowLeft size={18} />
-                </span>
-              </a>
+              {/* Header & Location Pill */}
+              <div className="relative flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-white/10">
+                <div>
+                  <h2 className="text-base sm:text-lg font-extrabold tracking-tight text-white">
+                    تثمين وإسقاط فوري في جدة
+                  </h2>
+                  <p className="text-[11px] font-medium text-slate-400 mt-0.5 flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-emerald-400" />
+                    رد وتقييم مبدئي خلال 5 دقائق
+                  </p>
+                </div>
 
-              {/* Phone Button */}
-              <a
-                href="tel:+966508374454"
-                aria-label="اتصل بنا"
-                className="mt-4 flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-[#1d7aa5] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#134f6b]"
-              >
-                <Phone size={18} className="text-white" />
-              </a>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.06] border border-white/10 px-3 py-1 text-[11px] font-bold text-slate-200">
+                  <MapPin className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
+                  تشليح الندى 207 — الخمرة 3
+                </span>
+              </div>
+
+              <form onSubmit={handleSubmit} className="relative space-y-3.5">
+                {/* Service Type Visual Toggle */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-300 mb-1.5">
+                    اختر الخدمة المطلوبة
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {SERVICES.map((srv) => {
+                      const Icon = srv.icon;
+                      const active = serviceType === srv.value;
+                      return (
+                        <button
+                          key={srv.value}
+                          type="button"
+                          onClick={() => setServiceType(srv.value)}
+                          className={`flex items-center gap-2.5 rounded-xl border p-2.5 text-right transition-all duration-200 cursor-pointer ${
+                            active
+                              ? "border-[#38bdf8]/60 bg-[#38bdf8]/10 shadow-[0_0_15px_rgba(56,189,248,0.1)]"
+                              : "border-white/10 bg-[#090e17]/80 hover:border-white/20 hover:bg-[#090e17]"
+                          }`}
+                        >
+                          <div
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors ${
+                              active
+                                ? "bg-[#38bdf8] text-[#090e17]"
+                                : "bg-white/[0.06] text-slate-400"
+                            }`}
+                          >
+                            <Icon className="w-4 h-4" strokeWidth={2.2} />
+                          </div>
+                          <div className="min-w-0">
+                            <div
+                              className={`text-xs font-bold truncate ${
+                                active ? "text-white" : "text-slate-300"
+                              }`}
+                            >
+                              {srv.label}
+                            </div>
+                            <div className="text-[10px] text-slate-400 truncate mt-0.5">
+                              {srv.sub}
+                            </div>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Inputs Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div className="group relative">
+                    <Car className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 transition-colors group-focus-within:text-[#38bdf8]" />
+                    <input
+                      type="text"
+                      required
+                      value={carModel}
+                      onChange={(e) => setCarModel(e.target.value)}
+                      placeholder="السيارة والموديل (أكسنت 2020)"
+                      className="w-full rounded-xl border border-white/10 bg-[#090e17] pr-10 pl-3 py-2.5 text-xs sm:text-sm font-medium text-white placeholder:text-slate-500 outline-none transition-all focus:border-[#38bdf8] focus:ring-2 focus:ring-[#38bdf8]/10"
+                    />
+                  </div>
+
+                  <div className="group relative">
+                    <Phone className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 transition-colors group-focus-within:text-[#38bdf8]" />
+                    <input
+                      type="tel"
+                      dir="ltr"
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="05XXXXXXXX"
+                      className="w-full rounded-xl border border-white/10 bg-[#090e17] pr-10 pl-3 py-2.5 text-xs sm:text-sm font-medium text-right text-white placeholder:text-slate-500 outline-none transition-all focus:border-[#38bdf8] focus:ring-2 focus:ring-[#38bdf8]/10"
+                    />
+                  </div>
+                </div>
+
+                {/* Custom Checkbox */}
+                <label className="flex items-center gap-2 pt-0.5 text-[11px] font-medium text-slate-300 cursor-pointer select-none group">
+                  <div className="relative flex items-center justify-center shrink-0">
+                    <input
+                      type="checkbox"
+                      required
+                      checked={validReg}
+                      onChange={(e) => setValidReg(e.target.checked)}
+                      className="sr-only"
+                    />
+                    <div
+                      className={`h-4 w-4 rounded-md border transition-all flex items-center justify-center ${
+                        validReg
+                          ? "border-[#38bdf8] bg-[#38bdf8]"
+                          : "border-white/20 bg-[#090e17] group-hover:border-white/40"
+                      }`}
+                    >
+                      {validReg && (
+                        <Check
+                          className="w-3 h-3 text-[#090e17]"
+                          strokeWidth={3}
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <span className="leading-snug">
+                    أقر بأن رخصة السير (الاستمارة) سارية لإتمام المبايعة أو
+                    الإسقاط عبر{" "}
+                    <strong className="font-bold text-white">أبشر</strong>
+                  </span>
+                </label>
+
+                {/* Submit CTA */}
+                <button
+                  type="submit"
+                  className="group relative w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-l from-emerald-500 to-emerald-400 hover:from-emerald-400 hover:to-emerald-300 py-3 px-5 text-xs sm:text-sm font-extrabold text-[#062012] shadow-[0_10px_25px_-5px_rgba(34,197,94,0.35)] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                >
+                  <MessageCircle className="w-4 h-4 fill-[#062012]/10" />
+                  <span>أرسل بيانات السيارة للتثمين عبر واتساب</span>
+                </button>
+
+                {/* Subtle Trust Footer */}
+                <div className="flex items-center justify-center gap-1.5 pt-0.5 text-[10px] font-semibold text-slate-400">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#38bdf8]" />
+                  <span>
+                    إسقاط ومبايعة نظامية 100% عبر أبشر — بدون أي التزام
+                  </span>
+                </div>
+              </form>
             </div>
 
             {/* Bottom info panel — cities served */}
-            <div className="mt-6 hidden max-w-xs flex-col gap-3 border-t border-[var(--border)] pt-6 lg:flex">
+            <div className="mt-2 hidden max-w-xs flex-col gap-3 border-t border-[var(--border)] pt-4 lg:flex">
               <span className="text-sm font-semibold text-[var(--foreground)]">
                 نخدم 3 مدن رئيسية
               </span>
@@ -88,7 +283,7 @@ export default function HeroSection() {
           {/* ========================================================
               CAR COLUMN
           ======================================================== */}
-          <div className="relative order-1 flex min-h-[340px] items-center justify-center sm:min-h-[420px] lg:order-2 lg:col-span-7 lg:min-h-[520px]">
+          <div className="relative order-1 flex min-h-[340px] items-center justify-center sm:min-h-[420px] lg:order-2 lg:col-span-6 lg:min-h-[520px]">
             {/* Ambient glow */}
             <div
               aria-hidden="true"
@@ -102,7 +297,7 @@ export default function HeroSection() {
             />
 
             {/* Car */}
-            <div className="relative z-10 w-full max-w-md sm:max-w-lg lg:max-w-2xl">
+            <div className="relative z-10 w-full max-w-md sm:max-w-lg lg:max-w-xl">
               <Image
                 src="/heroImage.webp"
                 alt="سيارة سيدان مصدومة ومتضررة في جدة جاهزة للتقييم والبيع وإسقاط اللوحات"
