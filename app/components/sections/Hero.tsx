@@ -73,7 +73,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-background py-16 text-foreground sm:py-20"
+      className="relative overflow-hidden bg-background py-18 text-foreground sm:py-22"
       dir="rtl"
     >
       <div className="container-custom relative z-10 px-4 sm:px-6">

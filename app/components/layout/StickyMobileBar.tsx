@@ -8,7 +8,7 @@ const WHATSAPP_URL =
   encodeURIComponent(
     "السلام عليكم، أرغب في تثمين سيارتي أو إسقاط لوحاتها الفوري عبر أبشر في جدة (الاستمارة منتهية أو سارية).",
   );
-  
+
 export default function StickyMobileBar() {
   const trackEvent = (
     eventName: "phone_call_click" | "whatsapp_click",
@@ -54,7 +54,7 @@ export default function StickyMobileBar() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", "sticky_mobile_bar")}
-          className="relative flex flex-[1.2] items-center justify-center gap-2 rounded-xl bg-gradient-to-l from-emerald-500 to-emerald-400 active:scale-[0.98] py-3 px-3 text-xs sm:text-sm font-extrabold text-[#062012] shadow-[0_8px_20px_-4px_rgba(34,197,94,0.45)] transition-all"
+          className="relative flex flex-[1.2] items-center justify-center gap-2 rounded-xl bg-gradient-to-l from-emerald-500 to-emerald-400 active:scale-[0.98] py-4 px-3 text-xs sm:text-sm font-extrabold text-[#062012] shadow-[0_8px_20px_-4px_rgba(34,197,94,0.45)] transition-all"
         >
           {/* نقطة نبض حية */}
           <span className="relative flex h-2 w-2">
