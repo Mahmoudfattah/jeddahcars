@@ -6,9 +6,9 @@ const PHONE_TEL = "tel:+966508374454";
 const WHATSAPP_URL =
   "https://wa.me/966508374454?text=" +
   encodeURIComponent(
-    "السلام عليكم، أرغب في تثمين سيارتي أو إسقاط لوحاتها الفوري عبر أبشر في جدة (الاستمارة سارية).",
+    "السلام عليكم، أرغب في تثمين سيارتي أو إسقاط لوحاتها الفوري عبر أبشر في جدة (الاستمارة منتهية أو سارية).",
   );
-
+  
 export default function StickyMobileBar() {
   const trackEvent = (
     eventName: "phone_call_click" | "whatsapp_click",

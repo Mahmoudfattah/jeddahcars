@@ -5,7 +5,6 @@ import {
   Truck,
   ShieldCheck,
   Clock3,
-  ArrowLeft,
   Phone,
   MessageCircle,
   MapPin,
@@ -63,7 +62,7 @@ export default function HeroSection() {
       `السلام عليكم، أرغب في خدمة (${serviceType}) في جدة:\n` +
       `- نوع السيارة والموديل: ${carModel}\n` +
       `- رقم الجوال: ${phone}\n` +
-      `- الإقرار النظامي: الاستمارة سارية لإتمام الإجراء النظامي عبر أبشر.`;
+      `- الإقرار النظامي: الاستمارة سارية أو منتهية لإتمام الإجراء النظامي عبر أبشر.`;
 
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,
@@ -80,33 +79,29 @@ export default function HeroSection() {
       <div className="container-custom relative z-10 px-4 sm:px-6">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
           {/* ========================================================
-              TEXT COLUMN + QUICK FORM
+              TEXT COLUMN + QUICK FORM (يظهر أولاً على الموبايل والديسكتوب)
           ======================================================== */}
-          <div className="order-2 flex flex-col gap-6 lg:order-1 lg:col-span-6">
+          <div className="order-1 flex flex-col gap-6 lg:col-span-6">
             <div className="flex flex-col gap-3">
               <p className="text-sm font-semibold text-[var(--brand-light)]">
-                تشليح · تالفة · متعطلة · سكراب · مصدومة — جدة
+                إسقاط مركبات فوري · تثمين وشراء سيارات مصدومة وتشليح — جدة فقط
               </p>
 
               <h1 className="text-3xl font-extrabold leading-[1.2] text-[var(--foreground)] sm:text-4xl lg:text-[42px]">
-                شراء سيارات التشليح والمصدومة
+                اسقاط مركبات فوري جدة
                 <br />
-                وإسقاط اللوحات في جدة
+                ونشتري سيارتك المصدومة كاش
               </h1>
 
               <p className="max-w-xl text-base leading-relaxed text-[var(--foreground-secondary)]">
-                نشتري جميع أنواع السيارات التشليح والتالفة والمتعطلة والسكراب
-                والمصدومة في جدة، مع تقييم فوري، وسحب مجاني من أمام المنزل،
-                وإتمام إجراءات إسقاط اللوحات الفوري. كما نخدم مكة المكرمة
-                والطائف.
+                نشتري جميع أنواع السيارات المصدومة والتشليح والتالفة والمتعطلة في كافة أحياء جدة بأعلى سعر كاش فوري، مع سطحة مجانية من أمام منزلك وإتمام إجراءات إسقاط اللوحات الفوري عبر أبشر (سواء كانت الاستمارة سارية أو منتهية).
               </p>
             </div>
 
             {/* ========================================================
-                EMBEDDED HERO QUICK FORM (تصميم داكن واحترافي)
+                EMBEDDED HERO QUICK FORM
             ======================================================== */}
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#111927]/95 p-5 sm:p-6 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl">
-              {/* إضاءة خلفية خفيفة متناغمة */}
               <div className="pointer-events-none absolute -top-20 -left-20 h-44 w-44 rounded-full bg-[#38bdf8]/10 blur-3xl" />
               <div className="pointer-events-none absolute -bottom-20 -right-20 h-44 w-44 rounded-full bg-emerald-500/10 blur-3xl" />
 
@@ -124,7 +119,7 @@ export default function HeroSection() {
 
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.06] border border-white/10 px-3 py-1 text-[11px] font-bold text-slate-200">
                   <MapPin className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
-                  تشليح الندى 207 — الخمرة 3
+                  تشليح الندى 207 — الخمرة 3 جدة
                 </span>
               </div>
 
@@ -132,7 +127,7 @@ export default function HeroSection() {
                 {/* Service Type Visual Toggle */}
                 <div>
                   <label className="block text-xs font-bold text-slate-300 mb-1.5">
-                    اختر الخدمة المطلوبة
+                    اختر الخدمة المطلوبة في جدة
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {SERVICES.map((srv) => {
@@ -230,8 +225,8 @@ export default function HeroSection() {
                     </div>
                   </div>
                   <span className="leading-snug">
-                    أقر بأن رخصة السير (الاستمارة) سارية لإتمام المبايعة أو
-                    الإسقاط عبر{" "}
+                    أقر بأن رخصة السير (الاستمارة) سارية أو منتهية لإتمام
+                    المبايعة أو الإسقاط عبر{" "}
                     <strong className="font-bold text-white">أبشر</strong>
                   </span>
                 </label>
@@ -255,26 +250,26 @@ export default function HeroSection() {
               </form>
             </div>
 
-            {/* Bottom info panel — cities served */}
-            <div className="mt-2 hidden max-w-xs flex-col gap-3 border-t border-[var(--border)] pt-4 lg:flex">
+            {/* Bottom info panel — Jeddah zones only */}
+            <div className="mt-2 hidden max-w-md flex-col gap-3 border-t border-[var(--border)] pt-4 lg:flex">
               <span className="text-sm font-semibold text-[var(--foreground)]">
-                نخدم 3 مدن رئيسية
+                تغطية فورية لجميع مناطق جدة
               </span>
 
-              <div className="flex items-center gap-4 text-sm text-[var(--foreground-muted)]">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-[var(--foreground-muted)]">
                 <span className="flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-[var(--brand-light)]" />
-                  جدة
+                  شمال وجنوب جدة
                 </span>
 
                 <span className="flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-[var(--sapphire-light)]" />
-                  مكة
+                  تشليح بريمان
                 </span>
 
                 <span className="flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-[var(--slate-400)]" />
-                  الطائف
+                  تشليح الخمرة والحمدانية
                 </span>
               </div>
             </div>
@@ -283,7 +278,7 @@ export default function HeroSection() {
           {/* ========================================================
               CAR COLUMN
           ======================================================== */}
-          <div className="relative order-1 flex min-h-[340px] items-center justify-center sm:min-h-[420px] lg:order-2 lg:col-span-6 lg:min-h-[520px]">
+          <div className="relative order-2 flex min-h-[300px] items-center justify-center sm:min-h-[380px] lg:col-span-6 lg:min-h-[520px]">
             {/* Ambient glow */}
             <div
               aria-hidden="true"
@@ -355,21 +350,21 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* MOBILE CITIES */}
-        <div className="mt-8 flex justify-center gap-5 text-sm text-[var(--foreground-muted)] lg:hidden">
+        {/* MOBILE JEDDAH ZONES */}
+        <div className="mt-8 flex flex-wrap justify-center gap-4 text-xs sm:text-sm text-[var(--foreground-muted)] lg:hidden">
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-[var(--brand-light)]" />
-            جدة
+            شمال وجنوب جدة
           </span>
 
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-[var(--sapphire-light)]" />
-            مكة
+            تشليح بريمان
           </span>
 
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-[var(--slate-400)]" />
-            الطائف
+            الخمرة والحمدانية
           </span>
         </div>
       </div>

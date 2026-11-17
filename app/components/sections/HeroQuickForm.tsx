@@ -60,7 +60,7 @@ export default function HeroQuickForm() {
       `السلام عليكم، أرغب في خدمة (${serviceType}) في جدة:\n` +
       `- نوع السيارة والموديل: ${carModel}\n` +
       `- رقم الجوال: ${phone}\n` +
-      `- الإقرار النظامي: الاستمارة سارية لإتمام الإجراء النظامي عبر أبشر.`;
+      `- الإقرار النظامي: الاستمارة منتهية أو سارية لإتمام الإجراء النظامي عبر أبشر.`;
 
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,
@@ -197,8 +197,8 @@ export default function HeroQuickForm() {
             </div>
           </div>
           <span className="leading-snug">
-            أقر بأن رخصة السير (الاستمارة) سارية لإتمام المبايعة أو الإسقاط عبر{" "}
-            <strong className="font-bold text-white">أبشر</strong>
+            أقر بأن رخصة السير (الاستمارة) سارية أو منتهية لإتمام المبايعة أو
+            الإسقاط عبر <strong className="font-bold text-white">أبشر</strong>
           </span>
         </label>
 
