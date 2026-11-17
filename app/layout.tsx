@@ -75,50 +75,50 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "AutoDealer",
-    name: "قيمها كار لشراء السيارات المصدومة والتشليح في جدة",
-    url: "https://qeemahcar.com",
-    image: "https://qeemahcar.com/heroImage.webp",
-    telephone: "+966508374454",
-    description:
-      "شراء جميع أنواع السيارات المصدومة والتشليح والتالفة والمتعطلة والسكراب في جدة مع تقييم فوري، سحب مجاني بسطحة خاصة، وإتمام إجراءات إسقاط اللوحات الفوري.",
-    priceRange: "$$",
-    areaServed: [
-      { "@type": "City", name: "جدة" },
-      { "@type": "City", name: "مكة المكرمة" },
-      { "@type": "City", name: "الطائف" },
-    ],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "جدة",
-      addressLocality: "جدة",
-      addressRegion: "منطقة مكة المكرمة",
-      postalCode: "21442",
-      addressCountry: "SA",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 21.5433,
-      longitude: 39.1728,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "00:00",
-      closes: "23:59",
-    },
-  };
-
+ const jsonLd = {
+   "@context": "https://schema.org",
+   "@type": "AutoDealer",
+   "@id": "https://qeemahcar.com/#autodealer",
+   name: "قيّمها كار لشراء السيارات المصدومة وإسقاط المركبات في جدة",
+   url: "https://qeemahcar.com",
+   image: "https://qeemahcar.com/heroImage.webp",
+   telephone: "+966508374454",
+   description:
+     "اسقاط مركبات فوري بجدة عبر أبشر وشراء السيارات المصدومة والتالفة والتشليح في جدة بأعلى سعر كاش فوري مع سطحة مجانية (سواء كانت الاستمارة سارية أو منتهية).",
+   priceRange: "$$",
+   areaServed: [{ "@type": "City", name: "جدة" }],
+   address: {
+     "@type": "PostalAddress",
+     streetAddress:
+       "تشليح الندى لعالم السيارات، رقم 207، الخمرة الصناعية الثالثة",
+     addressLocality: "جدة",
+     addressRegion: "منطقة مكة المكرمة",
+     postalCode: "22525",
+     addressCountry: "SA",
+   },
+   geo: {
+     "@type": "GeoCoordinates",
+     latitude: 21.3342,
+     longitude: 39.2206,
+   },
+   openingHoursSpecification: {
+     "@type": "OpeningHoursSpecification",
+     dayOfWeek: [
+       "Monday",
+       "Tuesday",
+       "Wednesday",
+       "Thursday",
+       "Friday",
+       "Saturday",
+       "Sunday",
+     ],
+     opens: "00:00",
+     closes: "23:59",
+   },
+   sameAs: [
+     "https://haraj.com.sa/users/%D8%AA%D8%B4%D9%84%D9%8A%D8%AD%20%D8%A7%D9%84%D9%86%D8%AF%D9%89%20%D9%84%D8%B9%D8%A7%D9%84%D9%85%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/",
+   ],
+ };
   return (
     <html lang="ar" dir="rtl" className={ibmPlexArabic.variable}>
       <body
