@@ -92,17 +92,9 @@ export default function RootLayout({
     areaServed: [{ "@type": "City", name: "جدة" }],
     address: {
       "@type": "PostalAddress",
-      streetAddress:
-        "تشليح الندى لعالم السيارات، رقم 207، الخمرة الصناعية الثالثة",
       addressLocality: "جدة",
       addressRegion: "منطقة مكة المكرمة",
-      postalCode: "22525",
       addressCountry: "SA",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 21.3342,
-      longitude: 39.2206,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -118,9 +110,6 @@ export default function RootLayout({
       opens: "00:00",
       closes: "23:59",
     },
-    sameAs: [
-      "https://haraj.com.sa/users/%D8%AA%D8%B4%D9%84%D9%8A%D8%AD%20%D8%A7%D9%84%D9%86%D8%AF%D9%89%20%D9%84%D8%B9%D8%A7%D9%84%D9%85%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/",
-    ],
   };
 
   return (
