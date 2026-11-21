@@ -205,7 +205,7 @@ export default function FastValuationJeddahArticle() {
 
           {/* 4-Step Valuation Flow */}
           <section className="mt-10 pt-8 border-t border-white/10">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-6">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-6!">
               مراحل التثمين والبيع الفوري في أحياء جدة
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -238,7 +238,7 @@ export default function FastValuationJeddahArticle() {
 
           {/* What raises your car's valuation */}
           <section className="mt-10 rounded-2xl border border-[#38bdf8]/20 bg-[#38bdf8]/[0.06] p-6 sm:p-8">
-            <h2 className="text-lg sm:text-xl font-extrabold text-white mb-4">
+            <h2 className="text-lg sm:text-xl font-extrabold text-white mb-4!">
               عوامل ترفع قيمة تسعير سيارتك في جدة
             </h2>
             <ul className="space-y-3">
@@ -297,7 +297,7 @@ export default function FastValuationJeddahArticle() {
             <Link href="/blog" className="text-[#38bdf8] hover:underline">
               شروط إسقاط المركبات عبر أبشر
             </Link>
-          </div>
+          </div>مراحل التثمين والبيع الفوري في أحياء جدة
         </div>
       </article>
 
