@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 import Footer from "../../components/layout/Footer";
 
-
 const PHONE_DISPLAY = "0508374454";
 const PHONE_TEL = "+966508374454";
 const WHATSAPP_LINK =
@@ -96,8 +95,8 @@ export default function FastValuationJeddahArticle() {
           "كيف يتم تقييم سيارتك المصدومة أو العطلانة في جدة خلال 15 دقيقة عبر الواتساب؟",
         description:
           "شرح تفصيلي لمعايير وخطوات تقييم السيارات المصدومة والمتعطلة في جدة عبر الواتساب مع دفع كاش فوري وإسقاط مركبات عبر أبشر.",
-        datePublished: "2026-11-22T10:00:00+03:00",
-        dateModified: "2026-11-22T10:00:00+03:00",
+        datePublished: "2026-11-19T10:00:00+03:00",
+        dateModified: "2026-11-19T10:00:00+03:00",
         author: {
           "@type": "Organization",
           name: "قيّمها كار لشراء السيارات المصدومة وإسقاط المركبات في جدة",
@@ -136,13 +135,14 @@ export default function FastValuationJeddahArticle() {
   };
 
   return (
-    <div dir="rtl" className="min-h-screen bg-[#090e17] text-slate-100 pt-24">
+    <div dir="rtl" className="min-h-screen bg-[#090e17] text-slate-100 pt-28">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-6">
+      {/* Breadcrumb */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-6">
         <nav
           aria-label="مسار الصفحة"
           className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-400"
@@ -165,8 +165,9 @@ export default function FastValuationJeddahArticle() {
         </nav>
       </div>
 
-      <article className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-[#131f33] via-[#0f172a] to-[#090e17] p-6 sm:p-10 lg:p-12 shadow-2xl">
+      {/* Article */}
+      <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-[#131f33] via-[#0f172a] to-[#090e17] p-6 sm:p-10 lg:p-14 shadow-2xl">
           <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-[#38bdf8] mb-5">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/30 px-3.5 py-1.5">
               <BookOpen className="w-3.5 h-3.5" />
@@ -182,12 +183,12 @@ export default function FastValuationJeddahArticle() {
             </span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl font-extrabold leading-[1.35] text-white">
+          <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold leading-[1.3] text-white max-w-4xl">
             كيف يتم تقييم سيارتك المصدومة أو العطلانة في جدة{" "}
             <span className="text-[#38bdf8]">خلال 15 دقيقة عبر الواتساب؟</span>
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg leading-relaxed text-slate-300">
+          <p className="mt-5 text-base sm:text-lg leading-relaxed text-slate-300 max-w-4xl">
             كثير من ملاك السيارات في <strong>جدة</strong> يترددون قبل بيع
             السيارة المصدومة أو المتعطلة خوفاً من بخس السعر أو ضياع الوقت في
             التنقل بين التشاليح. في <strong>قيّمها كار</strong> نمنحك تسعيراً
@@ -203,17 +204,17 @@ export default function FastValuationJeddahArticle() {
           </p>
 
           {/* 4-Step Valuation Flow */}
-          <section className="mt-10">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-5">
+          <section className="mt-10 pt-8 border-t border-white/10">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-6">
               مراحل التثمين والبيع الفوري في أحياء جدة
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {VALUATION_STEPS.map((item) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={item.step}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 flex items-start gap-4"
+                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:p-6 flex items-start gap-4 transition-colors hover:border-[#38bdf8]/30"
                   >
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#38bdf8]/15 border border-[#38bdf8]/30 text-[#38bdf8] font-extrabold text-sm">
                       {item.step}
@@ -236,7 +237,7 @@ export default function FastValuationJeddahArticle() {
           </section>
 
           {/* What raises your car's valuation */}
-          <section className="mt-10 rounded-2xl border border-[#38bdf8]/20 bg-[#38bdf8]/[0.06] p-6">
+          <section className="mt-10 rounded-2xl border border-[#38bdf8]/20 bg-[#38bdf8]/[0.06] p-6 sm:p-8">
             <h2 className="text-lg sm:text-xl font-extrabold text-white mb-4">
               عوامل ترفع قيمة تسعير سيارتك في جدة
             </h2>
@@ -254,12 +255,12 @@ export default function FastValuationJeddahArticle() {
           </section>
 
           {/* CTA */}
-          <div className="mt-10 rounded-3xl border border-[#38bdf8]/30 bg-gradient-to-r from-[#0f172a] to-[#132a46] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <div>
+          <div className="mt-10 rounded-3xl border border-[#38bdf8]/30 bg-gradient-to-r from-[#0f172a] to-[#132a46] p-6 sm:p-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div className="max-w-2xl">
               <h2 className="text-xl font-extrabold text-white">
                 احصل على تقييم فوري لسيارتك في جدة الآن
               </h2>
-              <p className="mt-2 text-sm text-slate-300">
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">
                 نغطي الحمدانية، أبحر، الصفا، المروة، بريمان، قويزة، والخمرة —
                 سطحة مجانية وإسقاط لوحات نظامي عبر أبشر.
               </p>
