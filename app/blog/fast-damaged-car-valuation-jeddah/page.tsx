@@ -13,7 +13,7 @@ import {
   Banknote,
   CheckCircle2,
 } from "lucide-react";
-import Footer from "../components/layout/Footer";
+import Footer from "../../components/layout/Footer";
 
 
 const PHONE_DISPLAY = "0508374454";

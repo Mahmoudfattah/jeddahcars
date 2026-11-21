@@ -2,8 +2,8 @@
 
 import { Phone, MessageCircle, ExternalLink, ArrowLeft } from "lucide-react";
 const quickLinks = [
-  { label: "من نحن", href: "#about" },
-  { label: "الأسئلة الشائعة", href: "#faq" },
+  { label: "من نحن", href: "/#about" },
+  { label: "الأسئلة الشائعة", href: "/#faq" },
   { label: "إسقاط مركبات فوري بجدة", href: "/isqat-markabat-jeddah" },
   { label: "شراء سيارات تشليح ومصدومة بجدة", href: "/tashleeh-jeddah" },
   { label: "شراء سيارات متعطلة وأعطال المحركات", href: "/damaged-cars-jeddah" },
@@ -17,6 +17,14 @@ const quickLinks = [
   //   href: "/scrap-car-brands-jeddah",
   // },
   { label: "المدونة ودليل إسقاط المركبات", href: "/blog" },
+  {
+    label: "تقييم السيارة المصدومة بجدة خلال 15 دقيقة",
+    href: "/blog/fast-damaged-car-valuation-jeddah",
+  },
+  // {
+  //   label: "دليل بيع السيارات السكراب بجدة",
+  //   href: "/blog/sell-scrap-old-cars-jeddah",
+  // },
 ];
 
 const otherSites = [
