@@ -128,7 +128,7 @@ export default function SellScrapOldCarsJeddahArticle() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-6">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-6">
         <nav
           aria-label="مسار الصفحة"
           className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-slate-400"
@@ -151,7 +151,7 @@ export default function SellScrapOldCarsJeddahArticle() {
         </nav>
       </div>
 
-      <article className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16">
+      <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
         <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-[#131f33] via-[#0f172a] to-[#090e17] p-6 sm:p-10 lg:p-12 shadow-2xl">
           <div className="flex flex-wrap items-center gap-3 text-xs font-bold text-[#38bdf8] mb-5">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#38bdf8]/10 border border-[#38bdf8]/30 px-3.5 py-1.5">
@@ -218,7 +218,7 @@ export default function SellScrapOldCarsJeddahArticle() {
 
           {/* Table of Accepted Scrap Cases */}
           <section className="mt-8">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-4">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-4!">
               حالات السيارات السكراب والقديمة التي نشتريها في جدة
             </h2>
             <div className="overflow-x-auto rounded-2xl border border-white/10">

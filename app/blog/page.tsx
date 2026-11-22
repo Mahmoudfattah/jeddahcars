@@ -289,7 +289,7 @@ export default function QeemahCarBlogPage() {
                   href="/damaged-cars-jeddah"
                   className="rounded-xl bg-white/5 hover:bg-[#38bdf8]/15 border border-white/10 hover:border-[#38bdf8]/40 px-4 py-2.5 text-xs sm:text-sm font-bold text-slate-200 hover:text-[#38bdf8] transition-all"
                 >
-                  شراء سيارات متعطلة  
+                  شراء سيارات متعطلة
                 </Link>
                 <Link
                   href="/car-valuation-jeddah"
@@ -336,6 +336,28 @@ export default function QeemahCarBlogPage() {
                 </a>
               </div>
             </div>
+          </div>
+          {/* مقالات جديدة في المدونة */}
+          <div className="mt-10 pt-8 border-t border-white/10">
+            <h2 className="text-lg sm:text-xl font-extrabold text-white mb-4!">
+              مقالات أخرى في مدونة قيّمها كار
+            </h2>
+            <Link
+              href="/blog/fast-damaged-car-valuation-jeddah"
+              className="group block rounded-2xl border border-white/10 bg-white/[0.03] p-5 hover:border-[#38bdf8]/50 hover:bg-[#38bdf8]/[0.06] transition-all"
+            >
+              <span className="inline-block text-xs font-bold text-[#38bdf8] mb-1.5">
+                دليل التثمين السريع — جدة
+              </span>
+              <h3 className="text-base sm:text-lg font-extrabold text-white group-hover:text-[#38bdf8] transition-colors">
+                كيف يتم تقييم سيارتك المصدومة أو العطلانة في جدة خلال 15 دقيقة
+                عبر الواتساب؟
+              </h3>
+              <p className="mt-1.5 text-sm text-slate-300">
+                تعرف على مراحل التسعير السريع والعوامل التي ترفع قيمة سيارتك في
+                جدة مع دفع كاش فوري وإسقاط أبشر.
+              </p>
+            </Link>
           </div>
         </article>
       </main>

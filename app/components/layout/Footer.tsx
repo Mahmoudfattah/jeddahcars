@@ -1,6 +1,14 @@
-"use client";
+import Link from "next/link";
+import {
+  Phone,
+  MessageCircle,
+  ArrowLeft,
+  ShieldCheck,
+  Clock3,
+  Truck,
+  FileCheck2,
+} from "lucide-react";
 
-import { Phone, MessageCircle, ExternalLink, ArrowLeft } from "lucide-react";
 const quickLinks = [
   { label: "من نحن", href: "/#about" },
   { label: "الأسئلة الشائعة", href: "/#faq" },
@@ -27,16 +35,28 @@ const quickLinks = [
   // },
 ];
 
-const otherSites = [
-  {
-    label: "حراج — تشليح الندى",
-    href: "https://haraj.com.sa/users/%D8%AA%D8%B4%D9%84%D9%8A%D8%AD%20%D8%A7%D9%84%D9%86%D8%AF%D9%89%20%D9%84%D8%B9%D8%A7%D9%84%D9%85%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA/",
-  },
+const JEDDAH_DISTRICTS = [
+  "الحمدانية وأبحر",
+  "الصفا والمروة",
+  "بريمان والسامر",
+  "قويزة والروابي",
+  "الخمرة وجنوب جدة",
+];
+
+const TRUST_GUARANTEES = [
+  { label: "إسقاط مركبات نظامي عبر أبشر", icon: FileCheck2 },
+  { label: "قبول الاستمارة السارية أو المنتهية", icon: ShieldCheck },
+  { label: "تثمين كاش خلال 15 دقيقة", icon: Clock3 },
+  { label: "سطحة مجانية لجميع أحياء جدة", icon: Truck },
 ];
 
 const PHONE_DISPLAY = "0508374454";
 const PHONE_TEL = "+966508374454";
-const WHATSAPP_LINK = "https://wa.me/966508374454";
+const WHATSAPP_LINK =
+  "https://wa.me/966508374454?text=" +
+  encodeURIComponent(
+    "السلام عليكم، أرغب في تقييم وبيع سيارتي المصدومة أو إسقاط لوحاتها في جدة",
+  );
 
 export default function Footer() {
   return (
@@ -51,15 +71,13 @@ export default function Footer() {
       <div className="container-custom relative z-10 px-4 sm:px-6 max-w-7xl mx-auto">
         {/* Top CTA Card */}
         <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#162438] to-[#0f172a] border border-white/10 p-6 sm:p-10 lg:p-12 mb-16 shadow-[0_0_40px_rgba(56,189,248,0.05)]">
-          {/* Decorative shapes inside CTA */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#38bdf8]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-right">
-            {/* CTA Text */}
             <div className="w-full md:flex-1">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#38bdf8] text-xs font-bold mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8] animate-pulse" />
-                متواجدون على مدار الساعة في جدة ومكة والطائف
+                متواجدون على مدار الساعة في جميع أحياء جدة
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-3!">
@@ -68,11 +86,11 @@ export default function Footer() {
 
               <p className="text-slate-300 mt-1 text-sm sm:text-base max-w-md mx-auto md:mx-0 leading-relaxed">
                 أرسل صور سيارتك الآن عبر الواتساب واحصل على أعلى تسعيرة كاش فوري
-                مع سطحة مجانية وإسقاط فوري للوحات خلال دقائق.
+                مع سطحة مجانية وإسقاط نظامي عبر أبشر (سواء الاستمارة سارية أو
+                منتهية).
               </p>
             </div>
 
-            {/* Contact Buttons (Both Phone & WhatsApp Active) */}
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
               <a
                 href={`tel:${PHONE_TEL}`}
@@ -131,17 +149,17 @@ export default function Footer() {
           {/* Brand & Description */}
           <div className="lg:col-span-4 flex flex-col gap-6">
             <span className="text-2xl font-extrabold text-white tracking-tight">
-              قيّمها كار — شراء السيارات المصدومة والتشليح
+              قيّمها كار — شراء السيارات المصدومة وإسقاط المركبات في جدة
             </span>
 
             <p className="text-sm text-slate-300 leading-relaxed">
-              نشتري سيارتك المصدومة أو التالفة أو المتعطلة أو التشليح في جدة
-              ومكة المكرمة والطائف بأعلى الأسعار النقدية، مع توفير خدمة السحب
-              بالسطحة مجاناً وإتمام إسقاط اللوحات الفوري.
+              نشتري سيارتك المصدومة أو التالفة أو المتعطلة أو السكراب في جدة
+              بأعلى الأسعار النقدية، مع خدمة السحب بالسطحة مجاناً وإتمام إسقاط
+              المركبة واللوحات نظامياً عبر أبشر (سواء كانت الاستمارة سارية أو
+              منتهية).
             </p>
 
             <div className="flex flex-wrap gap-3 mt-2">
-              {/* Phone */}
               <a
                 href={`tel:${PHONE_TEL}`}
                 dir="ltr"
@@ -156,7 +174,6 @@ export default function Footer() {
                 </div>
               </a>
 
-              {/* WhatsApp */}
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
@@ -176,77 +193,69 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2 lg:col-start-6 flex flex-col gap-5">
+          <div className="lg:col-span-3 lg:col-start-5 flex flex-col gap-5">
             <span className="text-base font-bold text-white">روابط سريعة</span>
 
             <ul className="flex flex-col gap-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="group flex items-center gap-2 text-sm text-slate-300 hover:text-[#38bdf8] transition-colors w-fit"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-600 group-hover:bg-[#38bdf8] transition-colors" />
-
                     <span className="group-hover:-translate-x-1 transition-transform duration-300">
                       {link.label}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Service Areas */}
+          {/* Jeddah Districts */}
           <div className="lg:col-span-2 flex flex-col gap-5">
             <span className="text-base font-bold text-white">
-              المدن التي نخدمها
+              أحياء جدة التي نخدمها
             </span>
 
             <ul className="flex flex-col gap-3">
-              {["جدة (كافة الأحياء)", "مكة المكرمة", "الطائف"].map(
-                (city, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-center gap-2 text-sm text-slate-300"
-                  >
-                    <div className="w-6 h-6 rounded-md bg-[#162438] border border-white/10 flex items-center justify-center">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8]" />
-                    </div>
-
-                    {city}
-                  </li>
-                ),
-              )}
+              {JEDDAH_DISTRICTS.map((district) => (
+                <li
+                  key={district}
+                  className="flex items-center gap-2 text-sm text-slate-300"
+                >
+                  <div className="w-6 h-6 rounded-md bg-[#162438] border border-white/10 flex items-center justify-center shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8]" />
+                  </div>
+                  {district}
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Other Projects */}
+          {/* Service Guarantees (Replaces shared Haraj link) */}
           <div className="lg:col-span-3 flex flex-col gap-5">
             <span className="text-base font-bold text-white">
-              حساباتنا الموثقة
+              ضمان الخدمة النظامية
             </span>
 
-            <div className="flex flex-wrap gap-2">
-              {otherSites.map((site) => (
-                <a
-                  key={site.href}
-                  href={site.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/5 border border-white/5 hover:border-[#38bdf8]/40 hover:bg-[#38bdf8]/10 transition-all"
-                >
-                  <ExternalLink
-                    size={14}
-                    className="text-slate-400 group-hover:text-[#38bdf8] transition-colors"
-                  />
-
-                  <span className="text-xs text-slate-200 group-hover:text-white transition-colors">
-                    {site.label}
-                  </span>
-                </a>
-              ))}
-            </div>
+            <ul className="flex flex-col gap-3">
+              {TRUST_GUARANTEES.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <li
+                    key={item.label}
+                    className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-300"
+                  >
+                    <div className="w-7 h-7 rounded-lg bg-[#38bdf8]/10 border border-[#38bdf8]/20 text-[#38bdf8] flex items-center justify-center shrink-0">
+                      <Icon size={14} />
+                    </div>
+                    <span>{item.label}</span>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
 

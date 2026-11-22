@@ -134,7 +134,7 @@ export default function RootLayout({
               {`
                 (function() {
                   var h = window.location.hostname;
-                  if (h === 'localhost' || h === '127.0.0.1') return;
+                 if (h !== 'qeemahcar.com' && h !== 'www.qeemahcar.com') return;
 
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){window.dataLayer.push(arguments);}
@@ -166,7 +166,7 @@ export default function RootLayout({
               {`
                 (function() {
                   var h = window.location.hostname;
-                  if (h === 'localhost' || h === '127.0.0.1') return;
+                 if (h !== 'qeemahcar.com' && h !== 'www.qeemahcar.com') return;
 
                   (function(c,l,a,r,i,t,y){
                     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
