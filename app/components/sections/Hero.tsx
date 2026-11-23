@@ -79,7 +79,7 @@ export default function HeroSection() {
       <div className="container-custom relative z-10 px-4 sm:px-6">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
           {/* ========================================================
-              TEXT COLUMN + QUICK FORM (يظهر أولاً على الموبايل والديسكتوب)
+              TEXT COLUMN + QUICK FORM
           ======================================================== */}
           <div className="order-1 flex flex-col gap-6 lg:col-span-6">
             <div className="flex flex-col gap-3">
@@ -94,7 +94,10 @@ export default function HeroSection() {
               </h1>
 
               <p className="max-w-xl text-base leading-relaxed text-[var(--foreground-secondary)]">
-                نشتري جميع أنواع السيارات المصدومة والتشليح والتالفة والمتعطلة في كافة أحياء جدة بأعلى سعر كاش فوري، مع سطحة مجانية من أمام منزلك وإتمام إجراءات إسقاط اللوحات الفوري عبر أبشر (سواء كانت الاستمارة سارية أو منتهية).
+                نشتري جميع أنواع السيارات المصدومة والتشليح والتالفة والمتعطلة في
+                كافة أحياء جدة بأعلى سعر كاش فوري، مع سطحة مجانية من أمام منزلك
+                وإتمام إجراءات إسقاط اللوحات الفوري عبر أبشر (سواء كانت
+                الاستمارة سارية أو منتهية).
               </p>
             </div>
 
@@ -119,7 +122,7 @@ export default function HeroSection() {
 
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.06] border border-white/10 px-3 py-1 text-[11px] font-bold text-slate-200">
                   <MapPin className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
-                  تشليح الندى 207 — الخمرة 3 جدة
+                  خدمة ميدانية — جميع أحياء جدة
                 </span>
               </div>
 
@@ -298,9 +301,9 @@ export default function HeroSection() {
                 alt="سيارة سيدان مصدومة ومتضررة في جدة جاهزة للتقييم والبيع وإسقاط اللوحات"
                 width={900}
                 height={650}
-                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 55vw, 45vw"
+                quality={75}
+                sizes="(max-width: 640px) 380px, (max-width: 1024px) 512px, 576px"
                 className="h-auto w-full object-contain"
-                priority
               />
             </div>
 
