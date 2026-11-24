@@ -11,6 +11,7 @@ import {
   MapPin,
   ArrowRight,
   HelpCircle,
+  Scale,
 } from "lucide-react";
 import Footer from "../components/layout/Footer";
 
@@ -24,26 +25,29 @@ const WHATSAPP_LINK =
 
 export const metadata: Metadata = {
   title:
-    "اسقاط مركبات فوري بجده عبر أبشر ونشتري سيارتك التالفة كاش | 0508374454",
+    "اسقاط مركبات فوري بجده عبر أبشر مجاناً ونشتري سيارتك التالفة كاش | 0508374454",
   description:
-    "خدمة إسقاط مركبات ولوحات فوري بجدة عبر منصة أبشر (الاستمارة سارية أو منتهية) مع شراء سيارتك المصدومة أو التالفة بأعلى سعر كاش وسحب مجاني بالسطحة: 0508374454",
+    "اسقاط مركبات فوري بجده بدون رسوم عبر منصة أبشر (الاستمارة سارية أو منتهية) مع شراء سيارتك المصدومة أو القديمة أو التالفة بأعلى سعر كاش وسطحة مجانية لجميع أحياء جدة: 0508374454.",
   keywords: [
     "اسقاط مركبات فوري بجده",
     "اسقاط مركبات فوري جدة",
+    "إسقاط المركبات القديمة بدون رسوم",
     "اسقاط لوحات سيارات جدة",
     "طريقة اسقاط المركبات ابشر جدة",
     "شراء سيارات تالفة واسقاط لوحات جدة",
+    "تشليح بريمان جدة",
     "قيّمها كار",
   ],
   alternates: {
     canonical: "https://qeemahcar.com/isqat-markabat-jeddah",
   },
   openGraph: {
-    title: "اسقاط مركبات فوري بجده عبر أبشر ونشتري سيارتك كاش | 0508374454",
+    title:
+      "اسقاط مركبات فوري بجده عبر أبشر مجاناً ونشتري سيارتك كاش | 0508374454",
     description:
-      "نشتري سيارتك المصدومة أو التالفة في جدة ونُنهي إجراءات إسقاط اللوحات الفوري عبر أبشر (الاستمارة سارية أو منتهية) مع سطحة مجانية: 0508374454",
+      "نشتري سيارتك المصدومة أو القديمة في جدة ونُنهي إجراءات إسقاط اللوحات الفوري عبر أبشر بدون رسوم (الاستمارة سارية أو منتهية) مع سطحة مجانية: 0508374454.",
     url: "https://qeemahcar.com/isqat-markabat-jeddah",
-    siteName: "قيّمها كار لشراء السيارات المصدومة والتشليح في جدة",
+    siteName: "قيّمها كار لشراء السيارات المصدومة وإسقاط المركبات في جدة",
     locale: "ar_SA",
     type: "website",
   },
@@ -54,13 +58,13 @@ const STEPS = [
     number: "01",
     title: "أرسل صور السيارة والاستمارة عبر واتساب",
     description:
-      "تواصل معنا على الرقم 0508374454 وأرسل صور السيارة التالفة أو المصدومة أو المتعطلة مع موقعك في أي حي من أحياء جدة.",
+      "تواصل معنا على الرقم 0508374454 وأرسل صور السيارة التالفة أو المصدومة أو القديمة مع موقعك في أي حي من أحياء جدة.",
   },
   {
     number: "02",
     title: "استلم أعلى سعر كاش فوري + سطحة مجانية",
     description:
-      "نقوم بتقييم السيارة فوراً ودفع المبلغ كاش أو تحويل بنكي مباشر، مع إرسال سطحة خاصة مجانية لسحب المركبة من أمام منزلك.",
+      "نقوم بتقييم السيارة خلال 15 دقيقة ودفع المبلغ كاش أو تحويل بنكي مباشر، مع إرسال سطحة خاصة مجانية لسحب المركبة من أمام منزلك.",
   },
   {
     number: "03",
@@ -71,29 +75,51 @@ const STEPS = [
 ];
 
 const REQUIREMENTS = [
-  "صورة الهوية الوطنية أو الإقامة لمالك المركبة (أو المفوض).",
-  "صورة استمارة السيارة (حتى لو كانت الاستمارة منتهية الصلاحية).",
-  "وجود رمز التحقق (أبشر) لإتمام إسقاط المركبة رسمياً وإخلاء مسؤولية المالك.",
+  "صورة الهوية الوطنية أو الإقامة لمالك المركبة (أو المفوض الرسمي).",
+  "صورة استمارة السيارة (نقبل المركبات سواء كانت الاستمارة سارية أو منتهية الصلاحية).",
+  "رمز التحقق المرسل من منصة أبشر لحظة تسليم المركبة واللوحات لإتمام الإسقاط الفوري.",
   "لا يُشترط وجود فحص دوري ساري المفعول لإتمام البيع وإسقاط اللوحات.",
-  "نتكفل نحن باستلام اللوحات وتسليمها للجهات المختصة وسحب السيارة بالسطحة مجاناً.",
+  "نتكفل باستلام اللوحات وسحب السيارة بالسطحة مجاناً 100% من جميع أحياء جدة.",
+];
+
+const COMPARISON = [
+  {
+    point: "رسوم التجديد والمخالفات",
+    absher: "تتوقف كافة رسوم التجديد والالتزامات فوراً بمجرد الإسقاط",
+    ignore: "تراكم رسوم تجديد رخصة السير ومخالفات الوقوف الطويل",
+  },
+  {
+    point: "العائد المالي للمالك",
+    absher: "تستلم أعلى سعر كاش فوري مقابل قيمة السيارة والقطع السليمة",
+    ignore: "تتآكل قيمة المركبة تحت الشمس وتفقد قيمتها السوقية",
+  },
+  {
+    point: "تكلفة السطحة والإجراءات",
+    absher: "مجانية 100% — لا تدفع أي رسوم على الإسقاط أو السحب",
+    ignore: "تتحمل أجرة السطحة والتنقل بين الورش والتشاليح بنفسك",
+  },
 ];
 
 const FAQS = [
   {
     q: "هل يتم إسقاط المركبات واللوحات في جدة في نفس اليوم؟",
-    a: "نعم، في قيّمها كار نقوم بإتمام إجراءات إسقاط المركبات واللوحات الفوري في جدة عبر منصة أبشر المعتمدة في نفس يوم استلام السيارة، ونزودك بإشعار إخلاء المسؤولية الرسمي فوراً.",
+    a: "نعم، في قيّمها كار نُنهي إجراءات إسقاط المركبات واللوحات الفوري في جدة عبر منصة أبشر المعتمدة في نفس يوم استلام السيارة، ونزودك بإشعار إخلاء المسؤولية الرسمي فوراً.",
   },
   {
-    q: "هل توجد أي رسوم على خدمة إسقاط اللوحات أو السطحة في جدة؟",
-    a: "لا توجد أي رسوم على الإطلاق؛ عند بيع سيارتك التالفة أو المصدومة أو المتعطلة لنا في جدة، نتكفل بكافة إجراءات إسقاط اللوحات وأجور السحب بالسطحة مجاناً 100%، بل وتستلم أعلى سعر كاش مقابل سيارتك.",
+    q: "كيف يتم إسقاط المركبات القديمة بدون رسوم في جدة؟",
+    a: "عند بيع سيارتك القديمة أو التالفة أو المصدومة لنا في جدة، لا تدفع أي رسوم إدارية أو أجور سطحة؛ بل نتكفل بعملية السحب وإسقاط اللوحات عبر أبشر مجاناً 100% ونُسلّمك قيمة السيارة نقداً.",
   },
   {
     q: "هل يمكن إسقاط لوحات سيارة استمارتها منتهية أو بدون فحص دوري؟",
-    a: "نعم بالتأكيد، نشتري السيارات المصدومة والتالفة والمتوقفة في جدة ونُنهي إجراءات إسقاط لوحاتها حتى لو كانت الاستمارة منتهية أو بدون فحص دوري ساري.",
+    a: "نعم، نقبل السيارات المصدومة والتالفة والقديمة في جدة ونُنهي إجراءات إسقاط لوحاتها عبر أبشر سواء كانت الاستمارة سارية أو منتهية، ولا يُشترط وجود فحص دوري ساري المفعول.",
+  },
+  {
+    q: "هل يشترط وجود السيارة فعلياً لإتمام إسقاط المركبة عبر أبشر؟",
+    a: "نعم، وفق الإجراءات النظامية المعتمدة عبر منصة أبشر ومراكز التشليح المرخصة، يُشترط تسليم المركبة التالفة أو القديمة مع لوحاتها ووجود الاستمارة (سارية أو منتهية) لإصدار إشعار الإسقاط الرسمي وإخلاء المسؤولية.",
   },
   {
     q: "ما هي أحياء جدة المشمولة بخدمة السحب المجاني وإسقاط المركبات؟",
-    a: "نغطي جميع أحياء جدة على مدار 24 ساعة: الحمدانية، بريمان، أبحر الشمالية والجنوبية، الصفا، المروة، السامر، النسيم، الروضة، الفيحاء، الوزيرية، الخمرة، وجنوب جدة.",
+    a: "نغطي جميع أحياء جدة على مدار 24 ساعة: الحمدانية، بريمان، أبحر الشمالية والجنوبية، الصفا، المروة، السامر، النسيم، الروضة، الفيحاء، قويزة، الوزيرية، الخمرة، وشمال وجنوب جدة.",
   },
 ];
 
@@ -107,9 +133,9 @@ const JEDDAH_AREAS = [
   "حي النسيم",
   "حي الروضة",
   "حي الفيحاء",
-  "الوزيرية والخمرة",
+  "قويزة والخمرة",
   "حي الجامعة",
-  "جنوب وشمال جدة",
+  "شمال وجنوب جدة",
 ];
 
 export default function IsqatMarkabatJeddahPage() {
@@ -119,9 +145,9 @@ export default function IsqatMarkabatJeddahPage() {
       {
         "@type": "Service",
         "@id": "https://qeemahcar.com/isqat-markabat-jeddah#service",
-        name: "إسقاط مركبات ولوحات فوري بجدة مع شراء السيارات التشليح والمصدومة",
+        name: "اسقاط مركبات فوري بجده مع شراء السيارات التشليح والمصدومة والقديمة",
         description:
-          "خدمة إسقاط مركبات ولوحات السيارات التالفة والمصدومة والتشليح فوراً في جدة عبر منصة أبشر مع الدفع الكاش الفوري والسطحة المجانية.",
+          "خدمة إسقاط مركبات ولوحات السيارات التالفة والقديمة والمصدومة فوراً في جدة عبر منصة أبشر بدون رسوم مع الدفع الكاش الفوري والسطحة المجانية.",
         provider: {
           "@id": "https://qeemahcar.com/#autodealer",
         },
@@ -155,7 +181,7 @@ export default function IsqatMarkabatJeddahPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "إسقاط مركبات ولوحات فوري بجدة",
+            name: "اسقاط مركبات فوري بجده",
             item: "https://qeemahcar.com/isqat-markabat-jeddah",
           },
         ],
@@ -170,7 +196,7 @@ export default function IsqatMarkabatJeddahPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main
+      <div
         dir="rtl"
         className="min-h-screen bg-[#090e17] text-white pt-28 pb-16 overflow-hidden"
       >
@@ -189,7 +215,7 @@ export default function IsqatMarkabatJeddahPage() {
             </Link>
             <span>/</span>
             <span className="text-[#38bdf8] font-semibold">
-              إسقاط مركبات ولوحات فوري بجدة
+              اسقاط مركبات فوري بجده
             </span>
           </nav>
         </div>
@@ -203,20 +229,20 @@ export default function IsqatMarkabatJeddahPage() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.25] tracking-tight text-white max-w-4xl">
-              إسقاط مركبات ولوحات فوري بجدة{" "}
+              اسقاط مركبات فوري بجده عبر أبشر{" "}
               <span className="text-[#38bdf8]">
-                مع شراء سيارتك التالفة أو المصدومة بأعلى سعر كاش
+                مع شراء سيارتك التالفة أو القديمة بأعلى سعر كاش
               </span>
             </h1>
 
             <p className="mt-4 sm:mt-5 text-base sm:text-lg leading-relaxed text-slate-300 max-w-3xl">
               هل لديك سيارة مصدومة، تالفة، متعطلة، أو قديمة في{" "}
-              <strong>جدة</strong> وترغب في بيعها تشليح مع{" "}
-              <strong>إسقاط لوحاتها فوراً من اسمك في أبشر</strong>؟ في{" "}
+              <strong>جدة</strong> وتبحث عن خدمة{" "}
+              <strong>إسقاط مركبات فوري بجدة بدون رسوم</strong>؟ في{" "}
               <strong>قيّمها كار</strong> نشتري سيارتك بأعلى تسعيرة نقدية فورية،
               ونتولى سحبها بسطحة خاصة مجانية من موقعك، ونُنهي إجراءات{" "}
-              <strong>إسقاط المركبات الفوري بجدة</strong> في نفس اليوم دون أي
-              رسوم أو تعقيد.
+              <strong>إسقاط اللوحات والمركبة عبر أبشر</strong> في نفس اليوم
+              (سواء كانت الاستمارة سارية أو منتهية).
             </p>
 
             {/* Primary CTA Buttons */}
@@ -273,7 +299,7 @@ export default function IsqatMarkabatJeddahPage() {
                 <Clock className="w-7 h-7 text-[#38bdf8] shrink-0" />
                 <div>
                   <h2 className="text-sm font-bold text-white">
-                    دفع كاش فوري خلال 30 دقيقة
+                    دفع كاش فوري خلال 15–30 دقيقة
                   </h2>
                   <p className="text-xs text-slate-400 mt-0.5">
                     أعلى سعر شراء للسيارات المصدومة والتشليح بجدة
@@ -317,11 +343,49 @@ export default function IsqatMarkabatJeddahPage() {
           </div>
         </section>
 
+        {/* Comparison Table */}
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-6 sm:py-8">
+          <div className="rounded-3xl border border-white/10 bg-[#111927] p-5 sm:p-8">
+            <div className="inline-flex items-center gap-2 text-[#38bdf8] text-xs font-bold mb-2">
+              <Scale className="w-4 h-4" />
+              <span>لماذا يُفضل الإسقاط الفوري؟</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-5!">
+              مقارنة بين إسقاط المركبة الفوري عبر أبشر وتركها مسجلة باسمك
+            </h2>
+            <div className="overflow-x-auto rounded-2xl border border-white/10">
+              <table className="w-full text-right border-collapse text-sm">
+                <thead>
+                  <tr className="bg-[#38bdf8]/15 text-[#38bdf8]">
+                    <th className="p-3.5 font-bold">وجه المقارنة</th>
+                    <th className="p-3.5 font-bold">الإسقاط عبر قيّمها كار</th>
+                    <th className="p-3.5 font-bold">ترك المركبة دون إسقاط</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMPARISON.map((row) => (
+                    <tr
+                      key={row.point}
+                      className="border-t border-white/10 odd:bg-white/[0.02]"
+                    >
+                      <td className="p-3.5 font-bold text-white">{row.point}</td>
+                      <td className="p-3.5 font-semibold text-emerald-400">
+                        {row.absher}
+                      </td>
+                      <td className="p-3.5 text-slate-400">{row.ignore}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* Requirements & Neighborhoods Grid */}
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8 sm:py-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Requirements Box */}
-            <div className="rounded-3xl border space-y-5!    border-white/10 bg-[#111927] p-5 sm:p-7">
+            <div className="rounded-3xl border space-y-5! border-white/10 bg-[#111927] p-5 sm:p-7">
               <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-3 sm:mb-4">
                 متطلبات إسقاط اللوحات والمركبات التالفة في جدة
               </h2>
@@ -329,7 +393,7 @@ export default function IsqatMarkabatJeddahPage() {
                 لا نطلب منك أي إجراءات معقدة أو مراجعة للمرور؛ كل ما نحتاجه
                 لإتمام شراء السيارة وإسقاط لوحاتها فوراً:
               </p>
-              <ul className="space-y-6">
+              <ul className="space-y-4">
                 {REQUIREMENTS.map((req, i) => (
                   <li
                     key={i}
@@ -343,7 +407,7 @@ export default function IsqatMarkabatJeddahPage() {
             </div>
 
             {/* Neighborhoods Box */}
-            <div className="rounded-3xl border space-y-5!  border-white/10 bg-[#111927] p-5 sm:p-7 flex flex-col justify-between">
+            <div className="rounded-3xl border space-y-5! border-white/10 bg-[#111927] p-5 sm:p-7 flex flex-col justify-between">
               <div>
                 <div className="inline-flex items-center gap-2 text-[#38bdf8] text-xs font-bold mb-3">
                   <MapPin className="w-4 h-4" />
@@ -412,9 +476,36 @@ export default function IsqatMarkabatJeddahPage() {
                 </div>
               ))}
             </div>
+
+            {/* Internal Linking Strip */}
+            <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-400">
+              <span className="font-bold text-white">خدمات وأدلة ذات صلة في جدة:</span>
+              <Link href="/tashleeh-jeddah" className="text-[#38bdf8] hover:underline">
+                شراء سيارات تشليح ومصدومة بجدة
+              </Link>
+              <span>•</span>
+              <Link href="/damaged-cars-jeddah" className="text-[#38bdf8] hover:underline">
+                شراء سيارات متعطلة وأعطال المحركات
+              </Link>
+              <span>•</span>
+              <Link href="/rear-front-damaged-cars" className="text-[#38bdf8] hover:underline">
+                تثمين الصدمات الخلفية والأمامية
+              </Link>
+              <span>•</span>
+              <Link href="/blog" className="text-[#38bdf8] hover:underline">
+                شروط إسقاط المركبات عبر أبشر
+              </Link>
+              <span>•</span>
+              <Link
+                href="/blog/fast-damaged-car-valuation-jeddah"
+                className="text-[#38bdf8] hover:underline"
+              >
+                تقييم سيارتك خلال 15 دقيقة
+              </Link>
+            </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <Footer />
     </>
