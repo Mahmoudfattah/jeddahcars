@@ -29,10 +29,10 @@ const quickLinks = [
     label: "تقييم السيارة المصدومة بجدة خلال 15 دقيقة",
     href: "/blog/fast-damaged-car-valuation-jeddah",
   },
-  // {
-  //   label: "دليل بيع السيارات السكراب بجدة",
-  //   href: "/blog/sell-scrap-old-cars-jeddah",
-  // },
+  {
+    label: "دليل بيع السيارات السكراب بجدة",
+    href: "/blog/sell-scrap-old-cars-jeddah",
+  },
 ];
 
 const JEDDAH_DISTRICTS = [
